@@ -68,18 +68,19 @@ namespace Game
         private void saveRace()
         {
             string time = DateTime.Now.ToString("h.mm.ss");
-            string path = @"W:\\C#_code\\GameLol\\Game\\Game\\saveFiles\\save_" + time + ".txt";
+            string path = @"C:\\Users\\Finley\\Documents\\DataBladeSaves\\save_" + time + ".txt";
             if (!File.Exists(path))
             {
                 using (StreamWriter sw = File.CreateText(path))
                 {
                     sw.WriteLine("Class: " + cla + " (" + Class + ")");
-                    sw.WriteLine("head :" + visAtt[0]);
-                    sw.WriteLine("torso:" + visAtt[1]);
-                    sw.WriteLine("arms :" + visAtt[2]);
-                    sw.WriteLine("legs :" + visAtt[3]);
-                    sw.WriteLine("hands:" + visAtt[4]);
-                    sw.WriteLine("feet :" + visAtt[5]);
+                    sw.WriteLine("head : " + visAtt[0]);
+                    sw.WriteLine("torso: " + visAtt[1]);
+                    sw.WriteLine("arms : " + visAtt[2]);
+                    sw.WriteLine("legs : " + visAtt[3]);
+                    sw.WriteLine("hands: " + visAtt[4]);
+                    sw.WriteLine("feet : " + visAtt[5]);
+                    sw.WriteLine("-----End Of Save--------");
                     sw.WriteLine(time);
                 }
             }
