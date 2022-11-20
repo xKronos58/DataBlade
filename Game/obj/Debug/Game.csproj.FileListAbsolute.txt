@@ -1,0 +1,14 @@
+W:\C# code\GameLol\Game\Game\bin\Debug\Game.exe
+W:\C# code\GameLol\Game\Game\bin\Debug\Game.pdb
+W:\C# code\GameLol\Game\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+W:\C# code\GameLol\Game\Game\obj\Debug\Game.csproj.SuggestedBindingRedirects.cache
+W:\C# code\GameLol\Game\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+W:\C# code\GameLol\Game\Game\obj\Debug\Game.exe
+W:\C# code\GameLol\Game\Game\obj\Debug\Game.pdb
+W:\C#_code\GameLol\Game\Game\bin\Debug\Game.exe
+W:\C#_code\GameLol\Game\Game\bin\Debug\Game.pdb
+W:\C#_code\GameLol\Game\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+W:\C#_code\GameLol\Game\Game\obj\Debug\Game.csproj.SuggestedBindingRedirects.cache
+W:\C#_code\GameLol\Game\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+W:\C#_code\GameLol\Game\Game\obj\Debug\Game.exe
+W:\C#_code\GameLol\Game\Game\obj\Debug\Game.pdb
