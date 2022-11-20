@@ -88,7 +88,44 @@ namespace Game
 
         public void presetChar()
         {
-            
+            Console.WriteLine("There are 8 presets listed below please type the number of the preset \n(If you want to query contents of the preset type num/contents e.g.\"8/contents\")");
+            Console.WriteLine("1 (Regular), 2 (---), 3 (---), 4 (---), 5 (---), 6 (---), 7 (---), 8 (---)");
+            String presetNum = Console.ReadLine().ToLower();
+            switch (presetNum)
+            {
+                case "1":
+                    break;
+                case "1/contents":
+                    break;
+                case "2":
+                    break;
+                case "2/contents":
+                    break;
+                case "3":
+                    break;
+                case "3/contents":
+                    break;
+                case "4":
+                    break;
+                case "4/contents":
+                    break;
+                case "5":
+                    break;
+                case "5/contents":
+                    break;
+                case "6":
+                    break;
+                case "6/contents":
+                    break;
+                case "7":
+                    break;
+                case "7/contents":
+                    break;
+                case "8":
+                    break;
+                case "8/contents":
+                    break;
+            }
         }
 
         public void customChar()
