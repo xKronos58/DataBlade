@@ -1,5 +1,4 @@
 ﻿using System;
-using static Game.CNSLart;
 
 namespace Game
 {
