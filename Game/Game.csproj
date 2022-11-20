@@ -40,6 +40,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="charCreation.cs" />
+        <Compile Include="CharPresets.cs" />
         <Compile Include="CNSLart.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
