@@ -1,9 +1,10 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace Game
 {
-    public class charCreation
+    public class CharCreation
     {
         private Random rnd = new Random();
 
@@ -66,12 +67,12 @@ namespace Game
             
             saveRace();
         }
-        
+        public static string time = DateTime.Now.ToString("h.mm.ss");
+        public string path = @"C:\\Users\\finle\\Documents\\DataBladeSaves\\save_" + time + ".txt";
+        //string path = @"C:\\Users\\Finley\\documents\\DatabladeSaves\\save_" + time + ".txt"; //For laptop
         private void saveRace()
         {
-            string time = DateTime.Now.ToString("h.mm.ss");
-            string path = @"C:\\Users\\finle\\Documents\\DataBladeSaves\\save_" + time + ".txt";
-            //string path = @"C:\\Users\\Finley\\documents\\DatabladeSaves\\save_" + time + ".txt"; //For laptop
+
             if (!File.Exists(path))
             {
                 using (StreamWriter sw = File.CreateText(path))
@@ -91,7 +92,8 @@ namespace Game
 
         public void presetChar()
         {
-            Console.WriteLine("There are 8 presets listed below please type the number of the preset \n(If you want to query contents of the preset type num/contents e.g.\"8/contents\")");
+            Console.WriteLine("There are 8 presets listed below please type the number of the preset " +
+                              "\n(If you want to query contents of the preset type num/contents e.g.\"8/contents\")");
             crctW1: ;
             Console.WriteLine("1 (Regular), 2 (---), 3 (---), 4 (---), 5 (---), 6 (---), 7 (---), 8 (---)");
             String presetNum = Console.ReadLine().ToLower();
@@ -382,5 +384,46 @@ namespace Game
             "0",        // Speed
             "0"         // Luck
         };
+        
+        int numF = 0;
+        public void loadSave()
+        {
+            string[] saves = new string[]
+            {
+                ""
+            };
+            foreach(string file in Directory.GetFiles(@"C:\\Users\\finle\\Documents\\DataBladeSaves\\"))
+            {
+                Console.WriteLine("(" + numF + ") " + file);
+                numF++;
+                saves = saves.Concat(new String[] { file }).ToArray();
+                // Console.WriteLine(saves[numF]);
+            }
+            Console.WriteLine("Which save do you want to chose?");
+            incrtValS: ;
+            string sc = Console.ReadLine();
+            int sci = Int32.Parse(sc);
+            if (sci == -1 || sci == null)
+            {
+                Console.WriteLine("The value of sci is: " + sci);
+                Console.WriteLine("There was a null or incorrect value" +
+                                  "\nPlease try again" +
+                                  "\nErr: 002, Unexpected symbol (check _errList.json for details)");
+                goto incrtValS;
+            }
+            else if (sci <= 1)
+            {
+                string[] savess = File.ReadAllLines(saves[sci]);
+                Console.WriteLine(savess[0]);
+                Console.WriteLine(savess[1]);
+                Console.WriteLine(savess[2]);
+                Console.WriteLine(savess[3]);
+                Console.WriteLine(savess[4]);
+                Console.WriteLine(savess[5]);
+                Console.WriteLine(savess[6]);
+                Console.WriteLine(savess[7]);
+                Console.WriteLine(savess[8]);
+            }
+        }
     }
 }
