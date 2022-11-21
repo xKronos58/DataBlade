@@ -1,0 +1,10 @@
+﻿{
+  "error_list": {
+    "1"         : "",
+    "err1 desc" : "", 
+    "2"         : "Err: 002, Unexpected symbol",
+    "err2 desc" : "",
+    "3"         : "",
+    "err3 desc" : ""
+  }
+}

@@ -278,7 +278,13 @@ namespace Game
 
         public void customChar()
         {
-            
+            Console.WriteLine("Which class do you want to be?");
+            String CSTMCLASS = Console.ReadLine();
+            int CSTMCLASSI = Int32.Parse(CSTMCLASS); 
+            if (CSTMCLASSI <= 9)
+            {
+                Console.WriteLine("Err: 002, Unexpected symbol (Refer to _errList.json for more details)");
+            }
         }
 
         public string[] Class1 /* Regular */ =
