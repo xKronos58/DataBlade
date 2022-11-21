@@ -1,9 +1,9 @@
 ﻿{
   "error_list": {
     "1"         : "",
-    "err1 desc" : "", 
+    "err1 desc" : "",
     "2"         : "Err: 002, Unexpected symbol",
-    "err2 desc" : "",
+    "err2 desc" : "--Minor | Err: 002 is when an unknown symbol or an unexpected symbol is input into a text or option field",
     "3"         : "",
     "err3 desc" : ""
   }
