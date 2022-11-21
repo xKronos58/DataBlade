@@ -68,8 +68,8 @@ namespace Game
             saveRace();
         }
         public static string time = DateTime.Now.ToString("h.mm.ss");
-        public string path = @"C:\\Users\\finle\\Documents\\DataBladeSaves\\save_" + time + ".txt";
-        //string path = @"C:\\Users\\Finley\\documents\\DatabladeSaves\\save_" + time + ".txt"; //For laptop
+        //public string path = @"C:\\Users\\finle\\Documents\\DataBladeSaves\\save_" + time + ".txt";
+        string path = @"C:\\Users\\Finley\\Documents\\DataBladeSaves\\save_" + time + ".txt"; //For laptop
         private void saveRace()
         {
 
@@ -385,14 +385,15 @@ namespace Game
             "0"         // Luck
         };
         
-        int numF = 0;
+        int numF = 1;
         public void loadSave()
         {
             string[] saves = new string[]
             {
                 ""
             };
-            foreach(string file in Directory.GetFiles(@"C:\\Users\\finle\\Documents\\DataBladeSaves\\"))
+            // foreach(string file in Directory.GetFiles(@"C:\\Users\\finle\\Documents\\DataBladeSaves\\"))
+            foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
             {
                 Console.WriteLine("(" + numF + ") " + file);
                 numF++;
