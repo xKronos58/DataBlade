@@ -70,7 +70,8 @@ namespace Game
         private void saveRace()
         {
             string time = DateTime.Now.ToString("h.mm.ss");
-            string path = @"C:\\Users\\Finley\\Documents\\DataBladeSaves\\save_" + time + ".txt";
+            string path = @"C:\\Users\\finle\\Documents\\DataBladeSaves\\save_" + time + ".txt";
+            //string path = @"C:\\Users\\Finley\\documents\\DatabladeSaves\\save_" + time + ".txt"; //For laptop
             if (!File.Exists(path))
             {
                 using (StreamWriter sw = File.CreateText(path))
@@ -114,6 +115,7 @@ namespace Game
                     visAtt[0] = CPR.preset1[4];
                     visAtt[0] = CPR.preset1[5];
                     visAtt[0] = CPR.preset1[6];
+                    saveRace();
                     break;
                 case "1/contents":
                     break;
@@ -135,6 +137,7 @@ namespace Game
                     visAtt[0] = CPR.preset2[4];
                     visAtt[0] = CPR.preset2[5];
                     visAtt[0] = CPR.preset2[6];
+                    saveRace();
                     break;
                 case "2/contents":
                     break;
@@ -156,6 +159,7 @@ namespace Game
                     visAtt[0] = CPR.preset3[4];
                     visAtt[0] = CPR.preset3[5];
                     visAtt[0] = CPR.preset3[6];
+                    saveRace();
                     break;
                 case "3/contents":
                     break;
@@ -177,6 +181,7 @@ namespace Game
                     visAtt[0] = CPR.preset4[4];
                     visAtt[0] = CPR.preset4[5];
                     visAtt[0] = CPR.preset4[6];
+                    saveRace();
                     break;
                 case "4/contents":
                     break;
@@ -198,6 +203,7 @@ namespace Game
                     visAtt[0] = CPR.preset5[4];
                     visAtt[0] = CPR.preset5[5];
                     visAtt[0] = CPR.preset5[6];
+                    saveRace();
                     break;
                 case "5/contents":
                     break;
@@ -219,6 +225,7 @@ namespace Game
                     visAtt[0] = CPR.preset6[4];
                     visAtt[0] = CPR.preset6[5];
                     visAtt[0] = CPR.preset6[6];
+                    saveRace();
                     break;
                 case "6/contents":
                     break;
@@ -240,6 +247,7 @@ namespace Game
                     visAtt[0] = CPR.preset7[4];
                     visAtt[0] = CPR.preset7[5];
                     visAtt[0] = CPR.preset7[6];
+                    saveRace();
                     break;
                 case "7/contents":
                     break;
@@ -261,6 +269,7 @@ namespace Game
                     visAtt[0] = CPR.preset8[4];
                     visAtt[0] = CPR.preset8[5];
                     visAtt[0] = CPR.preset8[6];
+                    saveRace();
                     break;
                 case "8/contents":
                     break;
@@ -286,7 +295,7 @@ namespace Game
         
         public string[] Class2 /*  */ =
         {
-            "---",  // class name
+            "---",      // class name
             "0",        // max HP
             "0",        // Melee damage bonus
             "0",        // Ranged damage bonus
@@ -298,7 +307,7 @@ namespace Game
         
         public string[] Class3 /*  */ =
         {
-            "---",  // class name
+            "---",      // class name
             "0",        // max HP
             "0",        // Melee damage bonus
             "0",        // Ranged damage bonus
@@ -310,7 +319,7 @@ namespace Game
         
         public string[] Class4 /*  */ =
         {
-            "---",  // class name
+            "---",      // class name
             "0",        // max HP
             "0",        // Melee damage bonus
             "0",        // Ranged damage bonus
@@ -322,7 +331,7 @@ namespace Game
         
         public string[] Class5 /*  */ =
         {
-            "---",  // class name
+            "---",      // class name
             "0",        // max HP
             "0",        // Melee damage bonus
             "0",        // Ranged damage bonus
@@ -334,7 +343,7 @@ namespace Game
         
         public string[] Class6 /*  */ =
         {
-            "---",  // class name
+            "---",      // class name
             "0",        // max HP
             "0",        // Melee damage bonus
             "0",        // Ranged damage bonus
@@ -346,7 +355,7 @@ namespace Game
         
         public string[] Class7 /*  */ =
         {
-            "---",  // class name
+            "---",      // class name
             "0",        // max HP
             "0",        // Melee damage bonus
             "0",        // Ranged damage bonus
@@ -358,7 +367,7 @@ namespace Game
         
         public string[] Class8 /*  */ =
         {
-            "---",  // class name
+            "---",      // class name
             "0",        // max HP
             "0",        // Melee damage bonus
             "0",        // Ranged damage bonus

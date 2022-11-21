@@ -19,3 +19,10 @@ C:\Users\Finley\Desktop\codin_stuff\randomGameLol\Game\bin\Debug\Game.pdb
 C:\Users\Finley\Desktop\codin_stuff\randomGameLol\Game\obj\Debug\Game.csproj.AssemblyReference.cache
 C:\Users\Finley\Desktop\codin_stuff\randomGameLol\Game\obj\Debug\Game.csproj.SuggestedBindingRedirects.cache
 C:\Users\Finley\Desktop\codin_stuff\randomGameLol\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+W:\C# code\GameLol\DataBlade\Game\bin\Debug\Game.exe
+W:\C# code\GameLol\DataBlade\Game\bin\Debug\Game.pdb
+W:\C# code\GameLol\DataBlade\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+W:\C# code\GameLol\DataBlade\Game\obj\Debug\Game.csproj.SuggestedBindingRedirects.cache
+W:\C# code\GameLol\DataBlade\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+W:\C# code\GameLol\DataBlade\Game\obj\Debug\Game.exe
+W:\C# code\GameLol\DataBlade\Game\obj\Debug\Game.pdb
