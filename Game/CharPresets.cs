@@ -4,7 +4,7 @@ namespace Game
     {
         public int[] preset1 =
         {
-            0, //class	    	|   0   |
+            1, //class	    	|   0   |
             0, //head           |   1   |
             0, //torso          |   2   |
             0, //arms           |   3   |
@@ -16,7 +16,7 @@ namespace Game
 
         public int[] preset2 =
         {
-            0, //class	    	|   0   |
+            2, //class	    	|   0   |
             0, //head           |   1   |
             0, //torso          |   2   |
             0, //arms           |   3   |
@@ -28,7 +28,7 @@ namespace Game
 
         public int[] preset3 =
         {
-            0, //class	    	|   0   |
+            3, //class	    	|   0   |
             0, //head           |   1   |
             0, //torso          |   2   |
             0, //arms           |   3   |
@@ -40,7 +40,7 @@ namespace Game
 
         public int[] preset4 =
         {
-            0, //class	    	|   0   |
+            4, //class	    	|   0   |
             0, //head           |   1   |
             0, //torso          |   2   |
             0, //arms           |   3   |
@@ -52,7 +52,7 @@ namespace Game
         
         public int[] preset5 =
         {
-            0, //class	    	|   0   |
+            5, //class	    	|   0   |
             0, //head           |   1   |
             0, //torso          |   2   |
             0, //arms           |   3   |
@@ -64,7 +64,7 @@ namespace Game
         
         public int[] preset6 =
         {
-            0, //class	    	|   0   |
+            6, //class	    	|   0   |
             0, //head           |   1   |
             0, //torso          |   2   |
             0, //arms           |   3   |
@@ -76,7 +76,7 @@ namespace Game
         
         public int[] preset7 =
         {
-            0, //class	    	|   0   |
+            7, //class	    	|   0   |
             0, //head           |   1   |
             0, //torso          |   2   |
             0, //arms           |   3   |
@@ -88,7 +88,7 @@ namespace Game
         
         public int[] preset8 =
         {
-            0, //class	    	|   0   |
+            8, //class	    	|   0   |
             0, //head           |   1   |
             0, //torso          |   2   |
             0, //arms           |   3   |

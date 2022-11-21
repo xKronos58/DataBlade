@@ -9,6 +9,8 @@ namespace Game
 
         Program p = new Program();
 
+        private CharPresets CPR = new CharPresets();
+
         public byte Class;
         
         int[] visAtt =
@@ -95,7 +97,7 @@ namespace Game
             switch (presetNum)
             {
                 case "1":
-                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    Console.WriteLine("You have chosen: " + presetNum + " Is that correct?");
                     String crct1 = Console.ReadLine().ToLower();
                     if (crct1 == "yes" || crct1 == "1" || crct1 == "y")
                     {
@@ -105,11 +107,18 @@ namespace Game
                         goto crctW1;
                     }
                     crct1: ;
+                    Class = (byte)CPR.preset1[0];
+                    visAtt[0] = CPR.preset1[1];
+                    visAtt[0] = CPR.preset1[2];
+                    visAtt[0] = CPR.preset1[3];
+                    visAtt[0] = CPR.preset1[4];
+                    visAtt[0] = CPR.preset1[5];
+                    visAtt[0] = CPR.preset1[6];
                     break;
                 case "1/contents":
                     break;
                 case "2":
-                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    Console.WriteLine("You have chosen: " + presetNum + " Is that correct?");
                     String crct2 = Console.ReadLine().ToLower();
                     if (crct2 == "yes" || crct2 == "1" || crct2 == "y")
                     {
@@ -119,11 +128,18 @@ namespace Game
                         goto crctW1;
                     }
                     crct2: ;
+                    Class = (byte)CPR.preset2[0];
+                    visAtt[0] = CPR.preset2[1];
+                    visAtt[0] = CPR.preset2[2];
+                    visAtt[0] = CPR.preset2[3];
+                    visAtt[0] = CPR.preset2[4];
+                    visAtt[0] = CPR.preset2[5];
+                    visAtt[0] = CPR.preset2[6];
                     break;
                 case "2/contents":
                     break;
                 case "3":
-                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    Console.WriteLine("You have chosen: " + presetNum + " Is that correct?");
                     String crct3 = Console.ReadLine().ToLower();
                     if (crct3 == "yes" || crct3 == "1" || crct3 == "y")
                     {
@@ -133,11 +149,18 @@ namespace Game
                         goto crctW1;
                     }
                     crct3: ;
+                    Class = (byte)CPR.preset3[0];
+                    visAtt[0] = CPR.preset3[1];
+                    visAtt[0] = CPR.preset3[2];
+                    visAtt[0] = CPR.preset3[3];
+                    visAtt[0] = CPR.preset3[4];
+                    visAtt[0] = CPR.preset3[5];
+                    visAtt[0] = CPR.preset3[6];
                     break;
                 case "3/contents":
                     break;
                 case "4":
-                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    Console.WriteLine("You have chosen: " + presetNum + " Is that correct?");
                     String crct4 = Console.ReadLine().ToLower();
                     if (crct4 == "yes" || crct4 == "1" || crct4 == "y")
                     {
@@ -147,11 +170,18 @@ namespace Game
                         goto crctW1;
                     }
                     crct4: ;
+                    Class = (byte)CPR.preset4[0];
+                    visAtt[0] = CPR.preset4[1];
+                    visAtt[0] = CPR.preset4[2];
+                    visAtt[0] = CPR.preset4[3];
+                    visAtt[0] = CPR.preset4[4];
+                    visAtt[0] = CPR.preset4[5];
+                    visAtt[0] = CPR.preset4[6];
                     break;
                 case "4/contents":
                     break;
                 case "5":
-                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    Console.WriteLine("You have chosen: " + presetNum + " Is that correct?");
                     String crct5 = Console.ReadLine().ToLower();
                     if (crct5 == "yes" || crct5 == "1" || crct5 == "y")
                     {
@@ -161,11 +191,18 @@ namespace Game
                         goto crctW1;
                     }
                     crct5: ;
+                    Class = (byte)CPR.preset5[0];
+                    visAtt[0] = CPR.preset5[1];
+                    visAtt[0] = CPR.preset5[2];
+                    visAtt[0] = CPR.preset5[3];
+                    visAtt[0] = CPR.preset5[4];
+                    visAtt[0] = CPR.preset5[5];
+                    visAtt[0] = CPR.preset5[6];
                     break;
                 case "5/contents":
                     break;
                 case "6":
-                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    Console.WriteLine("You have chosen: " + presetNum + " Is that correct?");
                     String crct6 = Console.ReadLine().ToLower();
                     if (crct6 == "yes" || crct6 == "1" || crct6 == "y")
                     {
@@ -175,11 +212,18 @@ namespace Game
                         goto crctW1;
                     }
                     crct6: ;
+                    Class = (byte)CPR.preset6[0];
+                    visAtt[0] = CPR.preset6[1];
+                    visAtt[0] = CPR.preset6[2];
+                    visAtt[0] = CPR.preset6[3];
+                    visAtt[0] = CPR.preset6[4];
+                    visAtt[0] = CPR.preset6[5];
+                    visAtt[0] = CPR.preset6[6];
                     break;
                 case "6/contents":
                     break;
                 case "7":
-                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    Console.WriteLine("You have chosen: " + presetNum + " Is that correct?");
                     String crct7 = Console.ReadLine().ToLower();
                     if (crct7 == "yes" || crct7 == "1" || crct7 == "y")
                     {
@@ -189,11 +233,18 @@ namespace Game
                         goto crctW1;
                     }
                     crct7: ;
+                    Class = (byte)CPR.preset7[0];
+                    visAtt[0] = CPR.preset7[1];
+                    visAtt[0] = CPR.preset7[2];
+                    visAtt[0] = CPR.preset7[3];
+                    visAtt[0] = CPR.preset7[4];
+                    visAtt[0] = CPR.preset7[5];
+                    visAtt[0] = CPR.preset7[6];
                     break;
                 case "7/contents":
                     break;
                 case "8":
-                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    Console.WriteLine("You have chosen: " + presetNum + " Is that correct?");
                     String crct8 = Console.ReadLine().ToLower();
                     if (crct8 == "yes" || crct8 == "1" || crct8 == "y")
                     {
@@ -203,6 +254,13 @@ namespace Game
                         goto crctW1;
                     }
                     crct8: ;
+                    Class = (byte)CPR.preset8[0];
+                    visAtt[0] = CPR.preset8[1];
+                    visAtt[0] = CPR.preset8[2];
+                    visAtt[0] = CPR.preset8[3];
+                    visAtt[0] = CPR.preset8[4];
+                    visAtt[0] = CPR.preset8[5];
+                    visAtt[0] = CPR.preset8[6];
                     break;
                 case "8/contents":
                     break;
