@@ -89,39 +89,120 @@ namespace Game
         public void presetChar()
         {
             Console.WriteLine("There are 8 presets listed below please type the number of the preset \n(If you want to query contents of the preset type num/contents e.g.\"8/contents\")");
+            crctW1: ;
             Console.WriteLine("1 (Regular), 2 (---), 3 (---), 4 (---), 5 (---), 6 (---), 7 (---), 8 (---)");
             String presetNum = Console.ReadLine().ToLower();
             switch (presetNum)
             {
                 case "1":
+                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    String crct1 = Console.ReadLine().ToLower();
+                    if (crct1 == "yes" || crct1 == "1" || crct1 == "y")
+                    {
+                        goto crct1;
+                    } else if (crct1 == "no" || crct1 == "2" || crct1 == "n")
+                    {
+                        goto crctW1;
+                    }
+                    crct1: ;
                     break;
                 case "1/contents":
                     break;
                 case "2":
+                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    String crct2 = Console.ReadLine().ToLower();
+                    if (crct2 == "yes" || crct2 == "1" || crct2 == "y")
+                    {
+                        goto crct2;
+                    } else if (crct2 == "no" || crct2 == "2" || crct2 == "n")
+                    {
+                        goto crctW1;
+                    }
+                    crct2: ;
                     break;
                 case "2/contents":
                     break;
                 case "3":
+                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    String crct3 = Console.ReadLine().ToLower();
+                    if (crct3 == "yes" || crct3 == "1" || crct3 == "y")
+                    {
+                        goto crct3;
+                    } else if (crct3 == "no" || crct3 == "2" || crct3 == "n")
+                    {
+                        goto crctW1;
+                    }
+                    crct3: ;
                     break;
                 case "3/contents":
                     break;
                 case "4":
+                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    String crct4 = Console.ReadLine().ToLower();
+                    if (crct4 == "yes" || crct4 == "1" || crct4 == "y")
+                    {
+                        goto crct4;
+                    } else if (crct4 == "no" || crct4 == "2" || crct4 == "n")
+                    {
+                        goto crctW1;
+                    }
+                    crct4: ;
                     break;
                 case "4/contents":
                     break;
                 case "5":
+                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    String crct5 = Console.ReadLine().ToLower();
+                    if (crct5 == "yes" || crct5 == "1" || crct5 == "y")
+                    {
+                        goto crct5;
+                    } else if (crct5 == "no" || crct5 == "2" || crct5 == "n")
+                    {
+                        goto crctW1;
+                    }
+                    crct5: ;
                     break;
                 case "5/contents":
                     break;
                 case "6":
+                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    String crct6 = Console.ReadLine().ToLower();
+                    if (crct6 == "yes" || crct6 == "1" || crct6 == "y")
+                    {
+                        goto crct6;
+                    } else if (crct6 == "no" || crct6 == "2" || crct6 == "n")
+                    {
+                        goto crctW1;
+                    }
+                    crct6: ;
                     break;
                 case "6/contents":
                     break;
                 case "7":
+                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    String crct7 = Console.ReadLine().ToLower();
+                    if (crct7 == "yes" || crct7 == "1" || crct7 == "y")
+                    {
+                        goto crct7;
+                    } else if (crct7 == "no" || crct7 == "2" || crct7 == "n")
+                    {
+                        goto crctW1;
+                    }
+                    crct7: ;
                     break;
                 case "7/contents":
                     break;
                 case "8":
+                    Console.WriteLine("You have chosen: " + presetNum + "Is that correct?");
+                    String crct8 = Console.ReadLine().ToLower();
+                    if (crct8 == "yes" || crct8 == "1" || crct8 == "y")
+                    {
+                        goto crct8;
+                    } else if (crct8 == "no" || crct8 == "2" || crct8 == "n")
+                    {
+                        goto crctW1;
+                    }
+                    crct8: ;
                     break;
                 case "8/contents":
                     break;
