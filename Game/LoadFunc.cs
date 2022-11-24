@@ -49,7 +49,12 @@ namespace Game
                 Console.WriteLine(savess[8]);
             }
         }
-
+        
+        
+        
+        //Recent save loading
+        
+        
         public void recentSave()
         {
             Console.WriteLine("Loading most recent save...");
@@ -61,7 +66,6 @@ namespace Game
                 saves = saves.Concat(new String[] { file }).ToArray();
                 // Console.WriteLine(saves[numF]);
             }
-
             if (numF == -1)
             {
                 Console.WriteLine("Err: 003, Out of bounds expectation (Refer to _errList.json)");
@@ -72,8 +76,12 @@ namespace Game
             {
                 int sc = 1;
                 string[] savess = File.ReadAllLines(saves[sc]);
+                char[] b = new char[savess.Length];
                 using (StringReader sr = new StringReader(savess[0]))
-                    cC.visAtt[0] = 1;
+                {
+                    sr.Read(b, 0, 13);
+                }
+                cC.visAtt[0] = 1;
             }
         }
     }
