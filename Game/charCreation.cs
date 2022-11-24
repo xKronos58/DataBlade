@@ -68,7 +68,7 @@ namespace Game
             saveRace();
         }
         public static string time = DateTime.Now.ToString("h.mm.ss");
-        public string path = @"C:\\Users\\finle\\Documents\\DataBladeSaves\\save_" + time + ".txt";
+        public string path = @"C:\\Users\\Public\\DatabladeSaves\\save_" + time + ".txt";
         // string path = @"C:\\Users\\Finley\\Documents\\DataBladeSaves\\save_" + time + ".txt"; //For laptop
         private void saveRace()
         {
@@ -78,14 +78,23 @@ namespace Game
                 using (StreamWriter sw = File.CreateText(path))
                 {
                     sw.WriteLine("Class: " + Class + " (" + cla + ")");
+                    Console.WriteLine("Saving: 12.5%");
                     sw.WriteLine("head : " + visAtt[0]);
+                    Console.WriteLine("Saving: 25%");
                     sw.WriteLine("torso: " + visAtt[1]);
+                    Console.WriteLine("Saving: 37.5%");
                     sw.WriteLine("arms : " + visAtt[2]);
+                    Console.WriteLine("Saving: 50%");
                     sw.WriteLine("legs : " + visAtt[3]);
+                    Console.WriteLine("Saving: 62.5");
                     sw.WriteLine("hands: " + visAtt[4]);
+                    Console.WriteLine("Saving: 75%");
                     sw.WriteLine("feet : " + visAtt[5]);
+                    Console.WriteLine("Saving: 87.5%");
                     sw.WriteLine("-----End Of Save--------");
+                    Console.WriteLine("Saving: 99%");
                     sw.WriteLine(time);
+                    Console.WriteLine("Done!");
                 }
             }
         }

@@ -50,7 +50,7 @@ namespace Game
             } else if (chrC == "load")
             {
                 lf.loadSave();
-            } else if (chrC == "load -recent")
+            } else if (chrC == "load -recent" || chrC == "load-recent")
             {
                 lf.recentSave();
             } else if (chrC == null || chrC != "rand" || chrC != "prsts" || chrC != "cstm")

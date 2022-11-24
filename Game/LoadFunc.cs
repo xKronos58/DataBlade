@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace Game
 {
@@ -16,7 +17,7 @@ namespace Game
         
         public void loadSave()
         {
-            foreach(string file in Directory.GetFiles(@"C:\\Users\\finle\\Documents\\DataBladeSaves\\"))
+            foreach(string file in Directory.GetFiles(@"C:\\Users\\Public\\DatabladeSaves\\"))
             // foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
             {
                 Console.WriteLine("(" + numF + ") " + file);
@@ -58,7 +59,7 @@ namespace Game
         public void recentSave()
         {
             Console.WriteLine("Loading most recent save...");
-            foreach(string file in Directory.GetFiles(@"C:\\Users\\finle\\Documents\\DataBladeSaves\\"))
+            foreach(string file in Directory.GetFiles(@"C:\\Users\\Public\\DatabladeSaves\\"))
                 // foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
             {
                 // Console.WriteLine("(" + numF + ") " + file);
@@ -77,9 +78,21 @@ namespace Game
                 int sc = 1;
                 string[] savess = File.ReadAllLines(saves[sc]);
                 char[] b = new char[savess.Length];
+                int savessL = 0;
+                savess.GetLength(savessL);
+                
                 using (StringReader sr = new StringReader(savess[0]))
                 {
-                    sr.Read(b, 0, 13);
+                    sr.Read(b, 0, 9);
+                    Console.WriteLine(b);
+                    char[] bs = new char[b.Length];
+                    using (StringReader srb = new StringReader(b[7].ToString()))
+                    {
+                        srb.Read(bs, 0, 1);
+                        string[] bss = new[] { bs.ToString() };
+                        int bsi = Int32.Parse(bss[0]);
+                        Console.WriteLine(bsi);
+                    }
                 }
                 cC.visAtt[0] = 1;
             }
