@@ -14,7 +14,7 @@ namespace Game
 
         public byte Class;
         
-        int[] visAtt =
+        public int[] visAtt =
         {
             0, //head           |   0   |
             0, //torso          |   1   |
@@ -68,8 +68,8 @@ namespace Game
             saveRace();
         }
         public static string time = DateTime.Now.ToString("h.mm.ss");
-        //public string path = @"C:\\Users\\finle\\Documents\\DataBladeSaves\\save_" + time + ".txt";
-        string path = @"C:\\Users\\Finley\\Documents\\DataBladeSaves\\save_" + time + ".txt"; //For laptop
+        public string path = @"C:\\Users\\finle\\Documents\\DataBladeSaves\\save_" + time + ".txt";
+        // string path = @"C:\\Users\\Finley\\Documents\\DataBladeSaves\\save_" + time + ".txt"; //For laptop
         private void saveRace()
         {
 
@@ -77,7 +77,7 @@ namespace Game
             {
                 using (StreamWriter sw = File.CreateText(path))
                 {
-                    sw.WriteLine("Class: " + cla + " (" + Class + ")");
+                    sw.WriteLine("Class: " + Class + " (" + cla + ")");
                     sw.WriteLine("head : " + visAtt[0]);
                     sw.WriteLine("torso: " + visAtt[1]);
                     sw.WriteLine("arms : " + visAtt[2]);
@@ -384,47 +384,5 @@ namespace Game
             "0",        // Speed
             "0"         // Luck
         };
-        
-        int numF = 1;
-        public void loadSave()
-        {
-            string[] saves = new string[]
-            {
-                ""
-            };
-            // foreach(string file in Directory.GetFiles(@"C:\\Users\\finle\\Documents\\DataBladeSaves\\"))
-            foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
-            {
-                Console.WriteLine("(" + numF + ") " + file);
-                numF++;
-                saves = saves.Concat(new String[] { file }).ToArray();
-                // Console.WriteLine(saves[numF]);
-            }
-            Console.WriteLine("Which save do you want to chose?");
-            incrtValS: ;
-            string sc = Console.ReadLine();
-            int sci = Int32.Parse(sc);
-            if (sci == -1 || sci == null)
-            {
-                Console.WriteLine("The value of sci is: " + sci);
-                Console.WriteLine("There was a null or incorrect value" +
-                                  "\nPlease try again" +
-                                  "\nErr: 002, Unexpected symbol (check _errList.json for details)");
-                goto incrtValS;
-            }
-            else if (sci <= 1)
-            {
-                string[] savess = File.ReadAllLines(saves[sci]);
-                Console.WriteLine(savess[0]);
-                Console.WriteLine(savess[1]);
-                Console.WriteLine(savess[2]);
-                Console.WriteLine(savess[3]);
-                Console.WriteLine(savess[4]);
-                Console.WriteLine(savess[5]);
-                Console.WriteLine(savess[6]);
-                Console.WriteLine(savess[7]);
-                Console.WriteLine(savess[8]);
-            }
-        }
     }
 }

@@ -8,6 +8,7 @@ namespace Game
         {
             CNSLart art = new CNSLart();
             CharCreation cha = new CharCreation();
+            LoadFunc lf = new LoadFunc();
             
             //Player stats
 
@@ -34,7 +35,7 @@ namespace Game
             
             Console.WriteLine("\n\n\nDo you wish to create your own character or have a randomised one?" +
                               "\n(Type \"rand\", \"prsts\" for a list of presets or \"cstm\" for a custom one)" +
-                              "\nTo load a save type \"load\"");
+                              "\nTo load a save type \"load\" or \"load -recent\" for the most recent save");
             inchrC: ;
             String chrC = Console.ReadLine().ToLower();
             if (chrC == "rand")
@@ -48,7 +49,10 @@ namespace Game
                 cha.customChar();
             } else if (chrC == "load")
             {
-                cha.loadSave();
+                lf.loadSave();
+            } else if (chrC == "load -recent")
+            {
+                lf.recentSave();
             } else if (chrC == null || chrC != "rand" || chrC != "prsts" || chrC != "cstm")
             {
                 Console.WriteLine("There was a null or incorrect value\nPlease try again\nErr: 002, Unexpected symbol (check _errList.json for details)");

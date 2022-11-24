@@ -42,6 +42,7 @@
         <Compile Include="charCreation.cs" />
         <Compile Include="CharPresets.cs" />
         <Compile Include="CNSLart.cs" />
+        <Compile Include="LoadFunc.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

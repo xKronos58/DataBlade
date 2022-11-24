@@ -1,0 +1,80 @@
+﻿using System.IO;
+using System;
+using System.Linq;
+
+namespace Game
+{
+    public class LoadFunc
+    {
+        CharCreation cC = new CharCreation();
+        
+        int numF = 1;
+        public string[] saves = new string[]
+        {
+            ""
+        };
+        
+        public void loadSave()
+        {
+            foreach(string file in Directory.GetFiles(@"C:\\Users\\finle\\Documents\\DataBladeSaves\\"))
+            // foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
+            {
+                Console.WriteLine("(" + numF + ") " + file);
+                numF++;
+                saves = saves.Concat(new String[] { file }).ToArray();
+                // Console.WriteLine(saves[numF]);
+            }
+            Console.WriteLine("Which save do you want to chose?");
+            incrtValS: ;
+            string sc = Console.ReadLine();
+            int sci = Int32.Parse(sc);
+            if (sci == -1 || sci == null)
+            {
+                Console.WriteLine("The value of sci is: " + sci);
+                Console.WriteLine("There was a null or incorrect value" +
+                                  "\nPlease try again" +
+                                  "\nErr: 002, Unexpected symbol (check _errList.json for details)");
+                goto incrtValS;
+            } else if (sci != -1)
+            {
+                string[] savess = File.ReadAllLines(saves[sci]);
+                Console.WriteLine(savess[0]);
+                Console.WriteLine(savess[1]);
+                Console.WriteLine(savess[2]);
+                Console.WriteLine(savess[3]);
+                Console.WriteLine(savess[4]);
+                Console.WriteLine(savess[5]);
+                Console.WriteLine(savess[6]);
+                Console.WriteLine(savess[7]);
+                Console.WriteLine(savess[8]);
+            }
+        }
+
+        public void recentSave()
+        {
+            Console.WriteLine("Loading most recent save...");
+            foreach(string file in Directory.GetFiles(@"C:\\Users\\finle\\Documents\\DataBladeSaves\\"))
+                // foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
+            {
+                // Console.WriteLine("(" + numF + ") " + file);
+                numF++;
+                saves = saves.Concat(new String[] { file }).ToArray();
+                // Console.WriteLine(saves[numF]);
+            }
+
+            if (numF == -1)
+            {
+                Console.WriteLine("Err: 003, Out of bounds expectation (Refer to _errList.json)");
+            } else if (numF == 0)
+            {
+                Console.WriteLine("You do not have any saves please start a new game");
+            } else
+            {
+                int sc = 1;
+                string[] savess = File.ReadAllLines(saves[sc]);
+                using (StringReader sr = new StringReader(savess[0]))
+                    cC.visAtt[0] = 1;
+            }
+        }
+    }
+}

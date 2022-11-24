@@ -26,3 +26,10 @@ W:\C# code\GameLol\DataBlade\Game\obj\Debug\Game.csproj.SuggestedBindingRedirect
 W:\C# code\GameLol\DataBlade\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
 W:\C# code\GameLol\DataBlade\Game\obj\Debug\Game.exe
 W:\C# code\GameLol\DataBlade\Game\obj\Debug\Game.pdb
+W:\C# _code\GameLol\DataBlade\Game\bin\Debug\Game.exe
+W:\C# _code\GameLol\DataBlade\Game\bin\Debug\Game.pdb
+W:\C# _code\GameLol\DataBlade\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+W:\C# _code\GameLol\DataBlade\Game\obj\Debug\Game.csproj.SuggestedBindingRedirects.cache
+W:\C# _code\GameLol\DataBlade\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+W:\C# _code\GameLol\DataBlade\Game\obj\Debug\Game.exe
+W:\C# _code\GameLol\DataBlade\Game\obj\Debug\Game.pdb
