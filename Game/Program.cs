@@ -36,11 +36,13 @@ namespace Game
             Console.WriteLine("\n\n\nDo you wish to create your own character or have a randomised one?" +
                               "\n(Type \"rand\", \"prsts\" for a list of presets or \"cstm\" for a custom one)" +
                               "\nTo load a save type \"load\" or \"load -recent\" for the most recent save");
+            asdlknmamn: ;
             inchrC: ;
             String chrC = Console.ReadLine().ToLower();
             if (chrC == "rand")
             {
                 cha.randomChar();
+                goto asdlknmamn;
             } else if (chrC == "prsts")
             {
                 cha.presetChar();

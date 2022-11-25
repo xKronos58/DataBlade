@@ -1,10 +1,19 @@
 ﻿{
   "error_list": {
     "1"         : "",
+    
     "err1 desc" : "",
+    
     "2"         : "Err: 002, Unexpected symbol",
-    "err2 desc" : "--Minor | Err: 002 is when an unknown symbol or an unexpected symbol is input into a text or option field",
+    
+    "err2 desc" : "--Minor  | Err: 002 is when an unknown symbol or an unexpected symbol is input into a text or option field",
+    
     "3"         : "Err: 003, Out of bounds expectation",
-    "err3 desc" : "--Major | Err: 003 is when there was a value referring to an array or int that was outside of the expected vlaues"
+    
+    "err3 desc" : "--Major  | Err: 003 is when there was a value referring to an array or int that was outside of the expected values",
+    
+    "4"         : "Err: 004, Something went wrong ¯\\_(ツ)_/¯",
+    
+    "err4 desc" : "--BIGBOI | ¯\\_(ツ)_/¯"
   }
 }
