@@ -40,3 +40,10 @@ C:\Users\Finley\Desktop\codin_stuff\DataBladeVCS\Game\obj\Debug\Game.csproj.Sugg
 C:\Users\Finley\Desktop\codin_stuff\DataBladeVCS\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
 C:\Users\Finley\Desktop\codin_stuff\DataBladeVCS\Game\obj\Debug\Game.exe
 C:\Users\Finley\Desktop\codin_stuff\DataBladeVCS\Game\obj\Debug\Game.pdb
+W:\C# _code\GameLol2VCS\DataBlade\Game\bin\Debug\Game.exe
+W:\C# _code\GameLol2VCS\DataBlade\Game\bin\Debug\Game.pdb
+W:\C# _code\GameLol2VCS\DataBlade\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+W:\C# _code\GameLol2VCS\DataBlade\Game\obj\Debug\Game.csproj.SuggestedBindingRedirects.cache
+W:\C# _code\GameLol2VCS\DataBlade\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+W:\C# _code\GameLol2VCS\DataBlade\Game\obj\Debug\Game.exe
+W:\C# _code\GameLol2VCS\DataBlade\Game\obj\Debug\Game.pdb

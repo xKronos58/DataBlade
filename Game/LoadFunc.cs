@@ -77,8 +77,30 @@ namespace Game
                 Console.WriteLine("You do not have any saves please start a new game");
             } else
             {
-                int sc = 1;
-                string[] savess = File.ReadAllLines(saves[sc]);
+                string[] timeS = { "", "" };
+                int sc = 0;
+                if (saves.Length > 1)
+                {
+                    int amtS = saves.Length;
+                    Console.WriteLine(amtS -2);
+                    while (amtS != 0)
+                    {
+                        // Console.WriteLine(saves[amtS -1]);
+                        timeS = timeS.Concat(new String[] { saves[amtS -1] }).ToArray();
+                        int timeSL = timeS.Length - 1;
+                        Console.WriteLine(timeS[timeSL] + " (" + timeSL + ")");
+                        amtS--;
+                        sc = 1;
+                    }
+                    Console.WriteLine("------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine(timeS[2] + "      // This is the most recent save");
+                    Console.WriteLine("------------------------------------------------------------------------------------------------------");
+                }
+                else
+                {
+                    goto ASDa;}
+                ASDa: ;
+                string[] savess = File.ReadAllLines(timeS[2]);
                 char[] b = new char[savess.Length];
                 int savessL = 0;
                 savess.GetLength(savessL);
@@ -97,13 +119,13 @@ namespace Game
                             string bss = bs.ToString();
                             // string[] bss = new[] { bs.ToString() };
                             // int bsi = Int32.Parse(bss[0]);
-                            Console.WriteLine(bss);
+                            // Console.WriteLine(bss);
                             if (bs != null)
                             {
                                 int bsn = bs.Length; 
                                 Debug.Assert(bs != null, nameof(bs) + " != null");
                                 string[] bsss = new[] { bs[bsn - 1].ToString() };
-                                Console.WriteLine(bsss);
+                                // Console.WriteLine(bsss);
                             }
 
                             char[] d = new char[savess.Length];
@@ -112,9 +134,24 @@ namespace Game
                             using (StringReader srbs = new StringReader(savess[0]))
                             {
                                 srbs.Read(d, 0, 9);
-                                Console.WriteLine();
+                                // Console.WriteLine();
                                 c = c.Concat(new String[] { d.ToString() }).ToArray();
-                                Console.WriteLine(c);
+                                // Console.WriteLine(c);
+                                char foo = '2';
+                                int bar = d[0] - '0';
+                                int bar14 = bar - 14;
+                                Console.WriteLine(bar);
+                                int len = d.Length;
+                                int arn = 0;
+                                // while (len != 0)
+                                // {
+                                //     len--;
+                                //     Console.WriteLine(d[arn]);
+                                //     arn++;
+                                // }
+                                {
+                                    
+                                }
                             }
                         }
                     }
