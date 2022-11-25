@@ -1,7 +1,9 @@
 ﻿using System.IO;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace Game
 {
@@ -88,10 +90,33 @@ namespace Game
                     char[] bs = new char[b.Length];
                     using (StringReader srb = new StringReader(b[7].ToString()))
                     {
-                        srb.Read(bs, 0, 1);
-                        string[] bss = new[] { bs.ToString() };
-                        int bsi = Int32.Parse(bss[0]);
-                        Console.WriteLine(bsi);
+                        unsafe
+                        {
+                            srb.Read(bs, 0, 1);
+                            Console.WriteLine(bs);
+                            string bss = bs.ToString();
+                            // string[] bss = new[] { bs.ToString() };
+                            // int bsi = Int32.Parse(bss[0]);
+                            Console.WriteLine(bss);
+                            if (bs != null)
+                            {
+                                int bsn = bs.Length; 
+                                Debug.Assert(bs != null, nameof(bs) + " != null");
+                                string[] bsss = new[] { bs[bsn - 1].ToString() };
+                                Console.WriteLine(bsss);
+                            }
+
+                            char[] d = new char[savess.Length];
+                            string[] c = new string[] {};
+
+                            using (StringReader srbs = new StringReader(savess[0]))
+                            {
+                                srbs.Read(d, 0, 9);
+                                Console.WriteLine();
+                                c = c.Concat(new String[] { d.ToString() }).ToArray();
+                                Console.WriteLine(c);
+                            }
+                        }
                     }
                 }
                 cC.visAtt[0] = 1;
