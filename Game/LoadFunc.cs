@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -19,9 +20,11 @@ namespace Game
         
         public void loadSave()
         {
+            //Gets the files in the saves dir
             foreach(string file in Directory.GetFiles(@"C:\\Users\\Public\\DatabladeSaves\\"))
             // foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
             {
+                //Lists all of the files to console 
                 Console.WriteLine("(" + numF + ") " + file);
                 numF++;
                 saves = saves.Concat(new String[] { file }).ToArray();
@@ -39,8 +42,9 @@ namespace Game
                                   "\nErr: 002, Unexpected symbol (check _errList.json for details)");
                 goto incrtValS;
             } else if (sci != -1)
-            {
+            {   
                 string[] savess = File.ReadAllLines(saves[sci]);
+                //debug -- Lists contents of the save file
                 Console.WriteLine(savess[0]);
                 Console.WriteLine(savess[1]);
                 Console.WriteLine(savess[2]);
@@ -64,6 +68,8 @@ namespace Game
             foreach(string file in Directory.GetFiles(@"C:\\Users\\Public\\DatabladeSaves\\"))
                 // foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
             {
+                //gets most recent save
+                
                 // Console.WriteLine("(" + numF + ") " + file);
                 numF++;
                 saves = saves.Concat(new String[] { file }).ToArray();
@@ -77,9 +83,10 @@ namespace Game
                 Console.WriteLine("You do not have any saves please start a new game");
             } else
             {
+                
                 string[] timeS = { "", "" };
                 int sc = 0;
-                if (saves.Length > 1)
+                if (saves.Length > 1) //Function for most recent save 
                 {
                     int amtS = saves.Length;
                     Console.WriteLine(amtS -2);
@@ -92,6 +99,7 @@ namespace Game
                         amtS--;
                         sc = 1;
                     }
+                    //Outputs here
                     Console.WriteLine("------------------------------------------------------------------------------------------------------");
                     Console.WriteLine(timeS[2] + "      // This is the most recent save");
                     Console.WriteLine("------------------------------------------------------------------------------------------------------");
@@ -114,6 +122,7 @@ namespace Game
                     {
                         unsafe
                         {
+                            //Trys to parse to a string /!\ This is the part that is broken /!\ 
                             srb.Read(bs, 0, 1);
                             Console.WriteLine(bs);
                             string bss = bs.ToString();
@@ -137,9 +146,11 @@ namespace Game
                                 c = c.Concat(new String[] { d.ToString() }).ToArray();
                                 // Console.WriteLine(c);
                                 char foo = '2';
-                                int bar = d[0] - '0';
-                                int bar14 = bar - 14;
+                                int bar = CharUnicodeInfo.GetDecimalDigitValue(d[0]);
+                                // int bar = d[0] - '0';
+                                // int bar14 = bar - 14;
                                 if (bar == 19) {
+                                    Console.WriteLine("the value was 19");
                                     Console.WriteLine("Err: 004, something went wrong.... ¯\\_(ツ)_/¯ (Refer to _errList.json)");
                                 } else {
                                     Console.WriteLine(bar);
@@ -196,9 +207,11 @@ namespace Game
                                 c = c.Concat(new String[] { d.ToString() }).ToArray();
                                 // Console.WriteLine(c);
                                 char foo = '2';
-                                int bar = d[0] - '0';
-                                int bar14 = bar - 14;
+                                int bar = CharUnicodeInfo.GetDecimalDigitValue(d[0]);
+                                // int bar = d[0] - '0';
+                                // int bar14 = bar - 14;
                                 if (bar == 19) {
+                                    Console.WriteLine("the value was 19");
                                     Console.WriteLine("Err: 004, something went wrong.... ¯\\_(ツ)_/¯ (Refer to _errList.json)");
                                 } else {
                                     Console.WriteLine(bar);
@@ -255,9 +268,11 @@ namespace Game
                                 c = c.Concat(new String[] { d.ToString() }).ToArray();
                                 // Console.WriteLine(c);
                                 char foo = '2';
-                                int bar = d[0] - '0';
-                                int bar14 = bar - 14;
+                                int bar = CharUnicodeInfo.GetDecimalDigitValue(d[0]);
+                                // int bar = d[0] - '0';
+                                // int bar14 = bar - 14;
                                 if (bar == 19) {
+                                    Console.WriteLine("the value was 19");
                                     Console.WriteLine("Err: 004, something went wrong.... ¯\\_(ツ)_/¯ (Refer to _errList.json)");
                                 } else {
                                     Console.WriteLine(bar);
@@ -314,9 +329,11 @@ namespace Game
                                 c = c.Concat(new String[] { d.ToString() }).ToArray();
                                 // Console.WriteLine(c);
                                 char foo = '2';
-                                int bar = d[0] - '0';
-                                int bar14 = bar - 14;
+                                int bar = CharUnicodeInfo.GetDecimalDigitValue(d[0]);
+                                // int bar = d[0] - '0';
+                                // int bar14 = bar - 14;
                                 if (bar == 19) {
+                                    Console.WriteLine("the value was 19");
                                     Console.WriteLine("Err: 004, something went wrong.... ¯\\_(ツ)_/¯ (Refer to _errList.json)");
                                 } else {
                                     Console.WriteLine(bar);
@@ -373,9 +390,11 @@ namespace Game
                                 c = c.Concat(new String[] { d.ToString() }).ToArray();
                                 // Console.WriteLine(c);
                                 char foo = '2';
-                                int bar = d[0] - '0';
-                                int bar14 = bar - 14;
+                                int bar = CharUnicodeInfo.GetDecimalDigitValue(d[0]);
+                                // int bar = d[0] - '0';
+                                // int bar14 = bar - 14;
                                 if (bar == 19) {
+                                    Console.WriteLine("the value was 19");
                                     Console.WriteLine("Err: 004, something went wrong.... ¯\\_(ツ)_/¯ (Refer to _errList.json)");
                                 } else {
                                     Console.WriteLine(bar);
@@ -432,9 +451,11 @@ namespace Game
                                 c = c.Concat(new String[] { d.ToString() }).ToArray();
                                 // Console.WriteLine(c);
                                 char foo = '2';
-                                int bar = d[0] - '0';
-                                int bar14 = bar - 14;
+                                int bar = CharUnicodeInfo.GetDecimalDigitValue(d[0]);
+                                // int bar = d[0] - '0';
+                                // int bar14 = bar - 14;
                                 if (bar == 19) {
+                                    Console.WriteLine("the value was 19");
                                     Console.WriteLine("Err: 004, something went wrong.... ¯\\_(ツ)_/¯ (Refer to _errList.json)");
                                 } else {
                                     Console.WriteLine(bar);
@@ -491,12 +512,16 @@ namespace Game
                                 c = c.Concat(new String[] { d.ToString() }).ToArray();
                                 // Console.WriteLine(c);
                                 char foo = '2';
-                                int bar = d[0] - '0';
-                                int bar14 = bar - 14;
+                                int bar = CharUnicodeInfo.GetDecimalDigitValue(d[0]);
+                                //I also tried 
+                                // int bar = d[0] - '0';
+                                // int bar14 = bar - 14;
                                 if (bar == 19) {
+                                    Console.WriteLine("the value was 19");
                                     Console.WriteLine("Err: 004, something went wrong.... ¯\\_(ツ)_/¯ (Refer to _errList.json)");
                                 } else {
                                     Console.WriteLine(bar);
+                                    //Currently outputs -1
                                 }
                                 int len = d.Length;
                                 int arn = 0;
