@@ -2,19 +2,25 @@ namespace Game
 {
     public class statsMultiplier
     {
-        private stats s = new stats();
-        private CharCreation c = new CharCreation();
-        private Program p = new Program();
+        // private stats s = new stats();
+        // private CharCreation c = new CharCreation();
+        // private Program p = new Program();
         
         /*
+         * /!\ Variable vals need balancing /!\
+         * 
          *      -KEY-
          *  ?cd = + ? * Cyber damage
          *
          *  ?hp = mhp + ?
          *
-         *  ?s = + ? * speed
+         *  ?sp = + ? * speed
          *
-         *  
+         *  ?st = + ? * stamina
+         *
+         *  ?rd = + ? * ranged damage
+         *
+         *  ?md = + ? * melee damage 
          */
         
         

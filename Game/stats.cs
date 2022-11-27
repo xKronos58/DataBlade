@@ -1,4 +1,6 @@
+using System;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Game
 {
@@ -7,16 +9,17 @@ namespace Game
         private CharCreation c = new CharCreation();
         private Program p = new Program();
         private CharPresets Ch = new CharPresets();
+        private statsMultiplier sm = new statsMultiplier();
 
-        public string[] atts =
+        public int[] atts =
         {
-            "0",        // max HP                   |   * Vis atts
-            "0",        // Melee damage bonus       |   |
-            "0",        // Ranged damage bonus      |   V
-            "0",        // Cyber damage bonus       |
-            "0",        // Stamina                  |   
-            "0",        // Speed                    |
-            "0"         // Luck                     | -- Excluded in mult
+            0,        // 0    max HP                   |   * Vis atts
+            0,        // 1    Melee damage bonus       |   |
+            0,        // 2    Ranged damage bonus      |   V
+            0,        // 3    Cyber damage bonus       |
+            0,        // 4    Stamina                  |   
+            0,        // 5    Speed                    |
+            0         // 6    Luck                     | -- Excluded in mult
         };
 
         public void loadStats()
@@ -26,7 +29,16 @@ namespace Game
             {
                 //If the class is 1
                 case 1:
-                    
+                    if (c.visAtt[1] == 1)
+                    {
+                        string[] head1Mi = sm.head1M.Take(3).ToArray();
+                        
+                        double vis1cl1at = Convert.ToDouble(head1Mi[1]);
+                        
+                        Console.WriteLine(vis1cl1at + "This should be sm.head1M (The first digit)");
+                        
+                        atts[3] = 1;
+                    }
                     break;
                 
                 //If the class is 2

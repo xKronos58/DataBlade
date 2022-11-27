@@ -9,7 +9,9 @@ namespace Game
             CNSLart art = new CNSLart();
             CharCreation cha = new CharCreation();
             LoadFunc lf = new LoadFunc();
+            stats ls = new stats();
             
+
             //Player stats
 
             double hp;
@@ -36,34 +38,43 @@ namespace Game
             Console.WriteLine("\n\n\nDo you wish to create your own character or have a randomised one?" +
                               "\n(Type \"rand\", \"prsts\" for a list of presets or \"cstm\" for a custom one)" +
                               "\nTo load a save type \"load\" or \"load -recent\" for the most recent save");
-            asdlknmamn: ;
             inchrC: ;
             String chrC = Console.ReadLine().ToLower();
             if (chrC == "rand")
             {
                 cha.randomChar();
-                goto asdlknmamn;
+                Console.WriteLine("does it reach this?");
+                goto lsS;
             } else if (chrC == "prsts")
             {
                 cha.presetChar();
+                goto lsS;
             } else if (chrC == "cstm")
             {
                 cha.customChar();
+                goto lsS;
             } else if (chrC == "load")
             {
                 lf.loadSave();
+                goto lsS;
             } else if (chrC == "load -recent" || chrC == "load-recent")
             {
                 lf.recentSave();
+                goto lsS;
             } else if (chrC == null || chrC != "rand" || chrC != "prsts" || chrC != "cstm")
             {
                 Console.WriteLine("There was a null or incorrect value\nPlease try again\nErr: 002, Unexpected symbol (check _errList.json for details)");
                 goto inchrC;
             }
+            
+            //Doesnt reach this?????
 
+
+            Console.WriteLine("Does it get to here");
+            lsS: ;
+            ls.loadStats();
+            
             //Game Loop
-            
-            
         }
     }
 }
