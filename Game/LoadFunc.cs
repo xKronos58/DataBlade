@@ -19,6 +19,7 @@ namespace Game
             ""
         };
         
+        //Manual save loading choice (WIP)
         public void loadSave()
         {
             //Gets the files in the saves dir
@@ -57,7 +58,9 @@ namespace Game
                 Console.WriteLine(savess[8]);
             }
         }
-
+        
+        //Sets the save values into the cC.visAtts[x];
+        
         private void setValues()
         {
             cC.Class = (byte)wV.classS1;
