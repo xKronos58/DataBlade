@@ -43,38 +43,34 @@ namespace Game
             if (chrC == "rand")
             {
                 cha.randomChar();
-                Console.WriteLine("does it reach this?");
-                goto lsS;
+
             } else if (chrC == "prsts")
             {
                 cha.presetChar();
-                goto lsS;
+                
             } else if (chrC == "cstm")
             {
                 cha.customChar();
-                goto lsS;
+
             } else if (chrC == "load")
             {
                 lf.loadSave();
-                goto lsS;
+
             } else if (chrC == "load -recent" || chrC == "load-recent")
             {
                 lf.recentSave();
-                goto lsS;
+
             } else if (chrC == null || chrC != "rand" || chrC != "prsts" || chrC != "cstm")
             {
                 Console.WriteLine("There was a null or incorrect value\nPlease try again\nErr: 002, Unexpected symbol (check _errList.json for details)");
-                goto inchrC;
+
             }
-            
-            //Doesnt reach this?????
 
-
-            Console.WriteLine("Does it get to here");
-            lsS: ;
             ls.loadStats();
             
             //Game Loop
+            
+            
         }
     }
 }

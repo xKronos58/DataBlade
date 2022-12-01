@@ -14,7 +14,7 @@ namespace Game
 
         public byte Class;
         
-        public int[] visAtt =
+        public double[] visAtt =
         {
             0, //head           |   0   |
             0, //torso          |   1   |
