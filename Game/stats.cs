@@ -25,7 +25,7 @@ namespace Game
         public void loadStats()
         {
             
-            switch (c.visAtt[0])
+            switch (c.Class)
             {
                 //If the class is 1
                 case 1:
@@ -43,30 +43,93 @@ namespace Game
                 
                 //If the class is 2
                 case 2:
+                {
+                    string[] head1Mi = sm.head1M.Take(3).ToArray();
+                        
+                    double vis1cl1at = Convert.ToDouble(head1Mi[1]);
+                        
+                    Console.WriteLine(vis1cl1at + "This should be sm.head1M (The first digit)");
+                        
+                    atts[3] = 1;
+                }
                     break;
                 
                 //If the class is 3
                 case 3:
+                {
+                    string[] head1Mi = sm.head1M.Take(3).ToArray();
+                        
+                    double vis1cl1at = Convert.ToDouble(head1Mi[1]);
+                        
+                    Console.WriteLine(vis1cl1at + "This should be sm.head1M (The first digit)");
+                        
+                    atts[3] = 1;
+                }
                     break;
                 
                 //If the class is 4
                 case 4:
+                {
+                    string[] head1Mi = sm.head1M.Take(3).ToArray();
+                        
+                    double vis1cl1at = Convert.ToDouble(head1Mi[1]);
+                        
+                    Console.WriteLine(vis1cl1at + "This should be sm.head1M (The first digit)");
+                        
+                    atts[3] = 1;
+                }
                     break;
                 
                 //If the class is 5
                 case 5:
+                {
+                    string[] head1Mi = sm.head1M.Take(3).ToArray();
+                        
+                    double vis1cl1at = Convert.ToDouble(head1Mi[1]);
+                        
+                    Console.WriteLine(vis1cl1at + "This should be sm.head1M (The first digit)");
+                        
+                    atts[3] = 1;
+                }
                     break;
                 
                 //If the class is 6
                 case 6:
+                {
+                    string[] head1Mi = sm.head1M.Take(3).ToArray();
+                        
+                    double vis1cl1at = Convert.ToDouble(head1Mi[1]);
+                        
+                    Console.WriteLine(vis1cl1at + "This should be sm.head1M (The first digit)");
+                        
+                    atts[3] = 1;
+                }
                     break;
                 
                 //If the class is 7
                 case 7:
+                {
+                    string[] head1Mi = sm.head1M.Take(3).ToArray();
+                        
+                    double vis1cl1at = Convert.ToDouble(head1Mi[1]);
+                        
+                    Console.WriteLine(vis1cl1at + "This should be sm.head1M (The first digit)");
+                        
+                    atts[3] = 1;
+                }
                     break;
                 
                 //If the class is 8
                 case 8:
+                {
+                    string[] head1Mi = sm.head1M.Take(3).ToArray();
+                        
+                    double vis1cl1at = Convert.ToDouble(head1Mi[1]);
+                        
+                    Console.WriteLine(vis1cl1at + "This should be sm.head1M (The first digit)");
+                        
+                    atts[3] = 1;
+                }
                     break;
             }
         }

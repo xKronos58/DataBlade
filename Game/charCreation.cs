@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace Game
 {
@@ -67,9 +68,11 @@ namespace Game
             
             saveRace();
         }
-        public static string time = DateTime.Now.ToString("d.HH.mm.ss");
+        public static string time = DateTime.Now.ToString("y.m.d.HH.mm.ss");
         public string path = @"C:\\Users\\Public\\DatabladeSaves\\save_" + time + ".txt";
         // string path = @"C:\\Users\\Finley\\Documents\\DataBladeSaves\\save_" + time + ".txt"; //For laptop
+
+        public int clearTime = 3000;
         private void saveRace()
         {
 
@@ -93,8 +96,10 @@ namespace Game
                     Console.WriteLine("Saving: 87.5%");
                     sw.WriteLine("-----End Of Save--------");
                     Console.WriteLine("Saving: 99%");
-                    sw.WriteLine(time);
+                    sw.WriteLine("Save time: " + time + "       (Format: y.m.d.HH.mm.ss)"); 
                     Console.WriteLine("Done!");
+                    Thread.Sleep(clearTime);
+                    Console.Clear();
                 }
             }
         }
