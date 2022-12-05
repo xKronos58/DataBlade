@@ -15,7 +15,10 @@ namespace Game
                     "[???]  : If you want to get out of this shithole--",
                     "[Guard]: Oi! Shut it!",
                     "[???]  : Piss off you pig!",
-                    "[Guard]:"
+                    "[Guard]: You better keep to your self before i beat you!",
+                    "[???]  : -",
+                    "[Game] : The guard walks away",
+                    ""
                 };
             } else if (big1 == "n") {
                 
