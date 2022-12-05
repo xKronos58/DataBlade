@@ -11,7 +11,7 @@ namespace Game
             0, //legs           |   4   |
             0, //hands          |   5   |
             0, //shoes &! Feet  |   6   |
-            1, //Preset num 	|   7   |
+            1 //Preset num 	|   7   |
         };
 
         public int[] preset2 =
@@ -23,7 +23,7 @@ namespace Game
             0, //legs           |   4   |
             0, //hands          |   5   |
             0, //shoes &! Feet  |   6   | 
-            2, //Preset num 	|   7   |
+            2 //Preset num 	|   7   |
         };
 
         public int[] preset3 =
@@ -35,7 +35,7 @@ namespace Game
             0, //legs           |   4   |
             0, //hands          |   5   |
             0, //shoes &! Feet  |   6   |
-            3, //Preset num 	|   7   |
+            3 //Preset num 	|   7   |
         };
 
         public int[] preset4 =
@@ -47,9 +47,9 @@ namespace Game
             0, //legs           |   4   |
             0, //hands          |   5   |
             0, //shoes &! Feet  |   6   |
-            4, //Preset num 	|   7   |
+            4 //Preset num 	|   7   |
         };
-        
+
         public int[] preset5 =
         {
             5, //class	    	|   0   |
@@ -59,9 +59,9 @@ namespace Game
             0, //legs           |   4   |
             0, //hands          |   5   |
             0, //shoes &! Feet  |   6   |
-            5, //Preset num 	|   7   |
+            5 //Preset num 	|   7   |
         };
-        
+
         public int[] preset6 =
         {
             6, //class	    	|   0   |
@@ -71,9 +71,9 @@ namespace Game
             0, //legs           |   4   |
             0, //hands          |   5   |
             0, //shoes &! Feet  |   6   |
-            6, //Preset num 	|   7   |
+            6 //Preset num 	|   7   |
         };
-        
+
         public int[] preset7 =
         {
             7, //class	    	|   0   |
@@ -83,9 +83,9 @@ namespace Game
             0, //legs           |   4   |
             0, //hands          |   5   |
             0, //shoes &! Feet  |   6   |
-            7, //Preset num 	|   7   |
+            7 //Preset num 	|   7   |
         };
-        
+
         public int[] preset8 =
         {
             8, //class	    	|   0   |
@@ -95,7 +95,7 @@ namespace Game
             0, //legs           |   4   |
             0, //hands          |   5   |
             0, //shoes &! Feet  |   6   |
-            8, //Preset num 	|   7   |
+            8 //Preset num 	|   7   |
         };
     }
 }

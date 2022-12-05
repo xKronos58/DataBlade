@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Game
 {
@@ -6,10 +7,10 @@ namespace Game
     {
         public static void Main(string[] args)
         {
-            CNSLart art = new CNSLart();
-            CharCreation cha = new CharCreation();
-            LoadFunc lf = new LoadFunc();
-            stats ls = new stats();
+            var art = new CNSLart();
+            var cha = new CharCreation();
+            var lf = new LoadFunc();
+            var ls = new stats();
 
 
             //Player stats
@@ -17,7 +18,7 @@ namespace Game
             double hp;
             long chips;
 
-            Random rnd = new Random();
+            var rnd = new Random();
 
             //Title screen
 
@@ -39,7 +40,7 @@ namespace Game
                               "\n(Type \"rand\", \"prsts\" for a list of presets or \"cstm\" for a custom one)" +
                               "\nTo load a save type \"load\" or \"load -recent\" for the most recent save");
             inchrC: ;
-            String chrC = Console.ReadLine().ToLower();
+            var chrC = Console.ReadLine().ToLower();
             switch (chrC)
             {
                 case "rand":
@@ -63,10 +64,19 @@ namespace Game
                         "There was a null or incorrect value\nPlease try again\nErr: 002, Unexpected symbol (check _errList.json for details)");
                     goto inchrC;
             }
-            
+
             // ls.loadStats();
-            
+
+            void clearTimer()
+            {
+                var time_C = 2000;
+                Thread.Sleep(time_C);
+                Console.Clear();
+            }
+
             //Game Loop
+
+            clearTimer();
 
             art.firstCutScene();
         }

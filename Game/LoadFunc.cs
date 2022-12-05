@@ -1,41 +1,41 @@
-﻿using System.IO;
-using System;
+﻿using System;
 using System.Diagnostics;
-using System.Globalization;
+using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 
 namespace Game
 {
     public class LoadFunc
     {
-        CharCreation cC = new CharCreation();
-        private writeVars wV = new writeVars();
-        
-        int numF = 1;
-        public string[] saves = new string[]
+        private readonly CharCreation cC = new CharCreation();
+
+        private int numF = 1;
+
+        public string[] saves =
         {
             ""
         };
-        
+
+        private readonly writeVars wV = new writeVars();
+
         //Manual save loading choice (WIP)
         public void loadSave()
         {
             //Gets the files in the saves dir
-            foreach(string file in Directory.GetFiles(@"C:\\Users\\Public\\DatabladeSaves\\"))
-            // foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
+            foreach (var file in Directory.GetFiles(@"C:\\Users\\Public\\DatabladeSaves\\"))
+                // foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
             {
                 //Lists all of the files to console 
                 Console.WriteLine("(" + numF + ") " + file);
                 numF++;
-                saves = saves.Concat(new String[] { file }).ToArray();
+                saves = saves.Concat(new[] { file }).ToArray();
                 // Console.WriteLine(saves[numF]);
             }
+
             Console.WriteLine("Which save do you want to chose?");
             incrtValS: ;
-            string sc = Console.ReadLine();
-            int sci = Int32.Parse(sc);
+            var sc = Console.ReadLine();
+            var sci = int.Parse(sc);
             if (sci == -1 || sci == null)
             {
                 Console.WriteLine("The value of sci is: " + sci);
@@ -43,9 +43,11 @@ namespace Game
                                   "\nPlease try again" +
                                   "\nErr: 002, Unexpected symbol (check _errList.json for details)");
                 goto incrtValS;
-            } else if (sci != -1)
-            {   
-                string[] savess = File.ReadAllLines(saves[sci]);
+            }
+
+            if (sci != -1)
+            {
+                var savess = File.ReadAllLines(saves[sci]);
                 //debug -- Lists contents of the save file
                 Console.WriteLine(savess[0]);
                 Console.WriteLine(savess[1]);
@@ -58,13 +60,13 @@ namespace Game
                 Console.WriteLine(savess[8]);
             }
         }
-        
+
         //Sets the save values into the cC.visAtts[x];
-        
+
         private void setValues()
         {
             cC.Class = (byte)wV.classS1;
-            
+
             cC.visAtt[1] = wV.headS1;
             cC.visAtt[0] = wV.torsoS1;
             cC.visAtt[2] = wV.armsS1;
@@ -74,7 +76,7 @@ namespace Game
 
             Console.WriteLine("---Final vals---");
             Console.WriteLine(cC.Class);
-            
+
             byte repVisAtS = 0;
             while (repVisAtS != 6)
             {
@@ -82,300 +84,281 @@ namespace Game
                 Console.WriteLine(cC.visAtt[repVisAtS - 1]);
             }
         }
-        
+
         //Recent save loading
-        
+
         public void recentSave()
         {
             Console.WriteLine("Loading most recent save...");
-            foreach(string file in Directory.GetFiles(@"C:\\Users\\Public\\DatabladeSaves\\"))
+            foreach (var file in Directory.GetFiles(@"C:\\Users\\Public\\DatabladeSaves\\"))
                 // foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
             {
                 //gets most recent save
-                
+
                 // Console.WriteLine("(" + numF + ") " + file);
                 numF++;
-                saves = saves.Concat(new String[] { file }).ToArray();
+                saves = saves.Concat(new[] { file }).ToArray();
                 // Console.WriteLine(saves[numF]);
             }
+
             if (numF == -1)
             {
                 Console.WriteLine("Err: 003, Out of bounds expectation (Refer to _errList.json)");
-            } else if (numF == 0)
+            }
+            else if (numF == 0)
             {
                 Console.WriteLine("You do not have any saves please start a new game");
-            } else
+            }
+            else
             {
-                
                 string[] timeS = { "", "" };
-                int sc = 0;
+                var sc = 0;
                 if (saves.Length > 1) //Function for most recent save 
                 {
-                    int amtS = saves.Length;
-                    Console.WriteLine(amtS -2);
+                    var amtS = saves.Length;
+                    Console.WriteLine(amtS - 2);
                     while (amtS != 0)
                     {
                         // Console.WriteLine(saves[amtS -1]);
-                        timeS = timeS.Concat(new String[] { saves[amtS -1] }).ToArray();
-                        int timeSL = timeS.Length - 1;
+                        timeS = timeS.Concat(new[] { saves[amtS - 1] }).ToArray();
+                        var timeSL = timeS.Length - 1;
                         Console.WriteLine(timeS[timeSL] + " (" + timeSL + ")");
                         amtS--;
                         sc = 1;
                     }
+
                     //Outputs here
-                    Console.WriteLine("------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine(
+                        "------------------------------------------------------------------------------------------------------");
                     Console.WriteLine(timeS[2] + "      // This is the most recent save");
-                    Console.WriteLine("------------------------------------------------------------------------------------------------------");
+                    Console.WriteLine(
+                        "------------------------------------------------------------------------------------------------------");
                 }
-                else
-                {
-                    goto ASDa;}
-                ASDa: ;
-                string[] savess = File.ReadAllLines(timeS[2]);
-                char[] b = new char[savess.Length];
-                int savessL = 0;
+
+                var savess = File.ReadAllLines(timeS[2]);
+                var b = new char[savess.Length];
+                var savessL = 0;
                 savess.GetLength(savessL);
-                
+
                 //Loads class
 
-                using (StringReader sr = new StringReader(savess[0]))
+                using (var sr = new StringReader(savess[0]))
                 {
                     sr.Read(b, 0, 9);
                     Console.WriteLine(b);
-                    char[] bs = new char[b.Length];
-                    using (StringReader srb = new StringReader(b[7].ToString()))
+                    var bs = new char[b.Length];
+                    using (var srb = new StringReader(b[7].ToString()))
                     {
-                        unsafe
+                        srb.Read(bs, 0, 1);
+                        // Console.WriteLine(bs);
+                        var bss = bs.ToString();
+                        if (bs != null)
                         {
-                            srb.Read(bs, 0, 1);
-                            // Console.WriteLine(bs);
-                            string bss = bs.ToString();
-                            if (bs != null)
-                            {
-                                int bsn = bs.Length;
-                                Debug.Assert(bs != null, nameof(bs) + " != null");
-                                string[] bsss = new[] { bs[bsn - 1].ToString() };
-                            }
+                            var bsn = bs.Length;
+                            Debug.Assert(bs != null, nameof(bs) + " != null");
+                            string[] bsss = { bs[bsn - 1].ToString() };
+                        }
 
-                            char[] d = new char[savess.Length];
-                            string[] c = new string[] { };
+                        var d = new char[savess.Length];
+                        string[] c = { };
 
-                            using (StringReader srbs = new StringReader(savess[0]))
-                            {
-                                srbs.Read(d, 0, 9);
-                                var bar = Char.GetNumericValue(d[7]);
-                                double classS = bar;
-                                wV.classS1 = classS;
-                            }
+                        using (var srbs = new StringReader(savess[0]))
+                        {
+                            srbs.Read(d, 0, 9);
+                            var bar = char.GetNumericValue(d[7]);
+                            var classS = bar;
+                            wV.classS1 = classS;
                         }
                     }
 
                     //Loads Head
 
-                    using (StringReader sr1 = new StringReader(savess[1]))
+                    using (var sr1 = new StringReader(savess[1]))
                     {
                         sr1.Read(b, 0, 9);
                         Console.WriteLine(b);
-                        char[] bs2 = new char[b.Length];
-                        using (StringReader srb = new StringReader(b[7].ToString()))
+                        var bs2 = new char[b.Length];
+                        using (var srb = new StringReader(b[7].ToString()))
                         {
-                            unsafe
+                            srb.Read(bs2, 0, 1);
+                            // Console.WriteLine(bs2);
+                            var bss = bs2.ToString();
+                            if (bs2 != null)
                             {
-                                srb.Read(bs2, 0, 1);
-                                // Console.WriteLine(bs2);
-                                string bss = bs2.ToString();
-                                if (bs2 != null)
-                                {
-                                    int bsn = bs2.Length;
-                                    Debug.Assert(bs2 != null, nameof(bs2) + " != null");
-                                    string[] bsss = new[] { bs2[bsn - 1].ToString() };
-                                }
+                                var bsn = bs2.Length;
+                                Debug.Assert(bs2 != null, nameof(bs2) + " != null");
+                                string[] bsss = { bs2[bsn - 1].ToString() };
+                            }
 
-                                char[] d = new char[savess.Length];
-                                string[] c = new string[] { };
+                            var d = new char[savess.Length];
+                            string[] c = { };
 
-                                using (StringReader srbs = new StringReader(savess[1]))
-                                {
-                                    srbs.Read(d, 0, 9);
-                                    var bar = Char.GetNumericValue(d[7]);
-                                    double classS1 = bar;
-                                    wV.headS1 = classS1;
-                                }
+                            using (var srbs = new StringReader(savess[1]))
+                            {
+                                srbs.Read(d, 0, 9);
+                                var bar = char.GetNumericValue(d[7]);
+                                var classS1 = bar;
+                                wV.headS1 = classS1;
                             }
                         }
                     }
 
                     //Loads Torso
 
-                    using (StringReader sr2 = new StringReader(savess[2]))
+                    using (var sr2 = new StringReader(savess[2]))
                     {
                         sr2.Read(b, 0, 9);
                         Console.WriteLine(b);
-                        char[] bs2 = new char[b.Length];
-                        using (StringReader srb = new StringReader(b[7].ToString()))
+                        var bs2 = new char[b.Length];
+                        using (var srb = new StringReader(b[7].ToString()))
                         {
-                            unsafe
+                            srb.Read(bs2, 0, 1);
+                            // Console.WriteLine(bs2);
+                            var bss = bs2.ToString();
+                            if (bs2 != null)
                             {
-                                srb.Read(bs2, 0, 1);
-                                // Console.WriteLine(bs2);
-                                string bss = bs2.ToString();
-                                if (bs2 != null)
-                                {
-                                    int bsn = bs2.Length;
-                                    Debug.Assert(bs2 != null, nameof(bs2) + " != null");
-                                    string[] bsss = new[] { bs2[bsn - 1].ToString() };
-                                }
+                                var bsn = bs2.Length;
+                                Debug.Assert(bs2 != null, nameof(bs2) + " != null");
+                                string[] bsss = { bs2[bsn - 1].ToString() };
+                            }
 
-                                char[] d = new char[savess.Length];
-                                string[] c = new string[] { };
+                            var d = new char[savess.Length];
+                            string[] c = { };
 
-                                using (StringReader srbs = new StringReader(savess[2]))
-                                {
-                                    srbs.Read(d, 0, 9);
-                                    var bar = Char.GetNumericValue(d[7]);
-                                    double classS2 = bar;
-                                    wV.torsoS1 = classS2;
-                                }
+                            using (var srbs = new StringReader(savess[2]))
+                            {
+                                srbs.Read(d, 0, 9);
+                                var bar = char.GetNumericValue(d[7]);
+                                var classS2 = bar;
+                                wV.torsoS1 = classS2;
                             }
                         }
                     }
 
                     //Loads Arms
 
-                    using (StringReader sr3 = new StringReader(savess[3]))
+                    using (var sr3 = new StringReader(savess[3]))
                     {
                         sr3.Read(b, 0, 9);
                         Console.WriteLine(b);
-                        char[] bs3 = new char[b.Length];
-                        using (StringReader srb = new StringReader(b[7].ToString()))
+                        var bs3 = new char[b.Length];
+                        using (var srb = new StringReader(b[7].ToString()))
                         {
-                            unsafe
+                            srb.Read(bs3, 0, 1);
+                            // Console.WriteLine(bs3);
+                            var bss = bs3.ToString();
+                            if (bs != null)
                             {
-                                srb.Read(bs3, 0, 1);
-                                // Console.WriteLine(bs3);
-                                string bss = bs3.ToString();
-                                if (bs != null)
-                                {
-                                    int bsn = bs3.Length;
-                                    Debug.Assert(bs3 != null, nameof(bs3) + " != null");
-                                    string[] bsss = new[] { bs3[bsn - 1].ToString() };
-                                }
+                                var bsn = bs3.Length;
+                                Debug.Assert(bs3 != null, nameof(bs3) + " != null");
+                                string[] bsss = { bs3[bsn - 1].ToString() };
+                            }
 
-                                char[] d = new char[savess.Length];
-                                string[] c = new string[] { };
+                            var d = new char[savess.Length];
+                            string[] c = { };
 
-                                using (StringReader srbs = new StringReader(savess[3]))
-                                {
-                                    srbs.Read(d, 0, 9);
-                                    var bar = Char.GetNumericValue(d[7]);
-                                    double classS3 = bar;
-                                    wV.armsS1 = classS3;
-                                }
+                            using (var srbs = new StringReader(savess[3]))
+                            {
+                                srbs.Read(d, 0, 9);
+                                var bar = char.GetNumericValue(d[7]);
+                                var classS3 = bar;
+                                wV.armsS1 = classS3;
                             }
                         }
                     }
 
                     //Loads Legs
 
-                    using (StringReader sr4 = new StringReader(savess[4]))
+                    using (var sr4 = new StringReader(savess[4]))
                     {
                         sr4.Read(b, 0, 9);
                         Console.WriteLine(b);
-                        char[] bs4 = new char[b.Length];
-                        using (StringReader srb = new StringReader(b[7].ToString()))
+                        var bs4 = new char[b.Length];
+                        using (var srb = new StringReader(b[7].ToString()))
                         {
-                            unsafe
+                            srb.Read(bs4, 0, 1);
+                            // Console.WriteLine(bs4);
+                            var bss = bs4.ToString();
+                            if (bs4 != null)
                             {
-                                srb.Read(bs4, 0, 1);
-                                // Console.WriteLine(bs4);
-                                string bss = bs4.ToString();
-                                if (bs4 != null)
-                                {
-                                    int bsn = bs4.Length;
-                                    Debug.Assert(bs4 != null, nameof(bs4) + " != null");
-                                    string[] bsss = new[] { bs4[bsn - 1].ToString() };
-                                }
+                                var bsn = bs4.Length;
+                                Debug.Assert(bs4 != null, nameof(bs4) + " != null");
+                                string[] bsss = { bs4[bsn - 1].ToString() };
+                            }
 
-                                char[] d = new char[savess.Length];
-                                string[] c = new string[] { };
+                            var d = new char[savess.Length];
+                            string[] c = { };
 
-                                using (StringReader srbs = new StringReader(savess[4]))
-                                {
-                                    srbs.Read(d, 0, 9);
-                                    var bar = Char.GetNumericValue(d[7]);
-                                    double classS4 = bar;
-                                    wV.legsS1 = classS4;
-                                }
+                            using (var srbs = new StringReader(savess[4]))
+                            {
+                                srbs.Read(d, 0, 9);
+                                var bar = char.GetNumericValue(d[7]);
+                                var classS4 = bar;
+                                wV.legsS1 = classS4;
                             }
                         }
                     }
 
                     //Loads Hands
 
-                    using (StringReader sr5 = new StringReader(savess[5]))
+                    using (var sr5 = new StringReader(savess[5]))
                     {
                         sr5.Read(b, 0, 9);
                         Console.WriteLine(b);
-                        char[] bs5 = new char[b.Length];
-                        using (StringReader srb = new StringReader(b[7].ToString()))
+                        var bs5 = new char[b.Length];
+                        using (var srb = new StringReader(b[7].ToString()))
                         {
-                            unsafe
+                            srb.Read(bs5, 0, 1);
+                            // Console.WriteLine(bs5);
+                            var bss = bs5.ToString();
+                            if (bs5 != null)
                             {
-                                srb.Read(bs5, 0, 1);
-                                // Console.WriteLine(bs5);
-                                string bss = bs5.ToString();
-                                if (bs5 != null)
-                                {
-                                    int bsn = bs5.Length;
-                                    Debug.Assert(bs5 != null, nameof(bs5) + " != null");
-                                    string[] bsss = new[] { bs5[bsn - 1].ToString() };
-                                }
+                                var bsn = bs5.Length;
+                                Debug.Assert(bs5 != null, nameof(bs5) + " != null");
+                                string[] bsss = { bs5[bsn - 1].ToString() };
+                            }
 
-                                char[] d = new char[savess.Length];
-                                string[] c = new string[] { };
+                            var d = new char[savess.Length];
+                            string[] c = { };
 
-                                using (StringReader srbs = new StringReader(savess[5]))
-                                {
-                                    srbs.Read(d, 0, 9);
-                                    var bar = Char.GetNumericValue(d[7]);
-                                    double classS5 = bar;
-                                    wV.handsS1 = classS5;
-                                }
+                            using (var srbs = new StringReader(savess[5]))
+                            {
+                                srbs.Read(d, 0, 9);
+                                var bar = char.GetNumericValue(d[7]);
+                                var classS5 = bar;
+                                wV.handsS1 = classS5;
                             }
                         }
                     }
 
                     //Loads Feet
 
-                    using (StringReader sr6 = new StringReader(savess[6]))
+                    using (var sr6 = new StringReader(savess[6]))
                     {
                         sr6.Read(b, 0, 9);
                         Console.WriteLine(b);
-                        char[] bs6 = new char[b.Length];
-                        using (StringReader srb = new StringReader(b[7].ToString()))
+                        var bs6 = new char[b.Length];
+                        using (var srb = new StringReader(b[7].ToString()))
                         {
-                            unsafe
+                            srb.Read(bs6, 0, 1);
+                            // Console.WriteLine(bs6);
+                            var bss = bs6.ToString();
+                            if (bs6 != null)
                             {
-                                srb.Read(bs6, 0, 1);
-                                // Console.WriteLine(bs6);
-                                string bss = bs6.ToString();
-                                if (bs6 != null)
-                                {
-                                    int bsn = bs6.Length;
-                                    Debug.Assert(bs6 != null, nameof(bs6) + " != null");
-                                    string[] bsss = new[] { bs6[bsn - 1].ToString() };
-                                }
+                                var bsn = bs6.Length;
+                                Debug.Assert(bs6 != null, nameof(bs6) + " != null");
+                                string[] bsss = { bs6[bsn - 1].ToString() };
+                            }
 
-                                char[] d = new char[savess.Length];
-                                string[] c = new string[] { };
+                            var d = new char[savess.Length];
+                            string[] c = { };
 
-                                using (StringReader srbs = new StringReader(savess[6]))
-                                {
-                                    srbs.Read(d, 0, 9);
-                                    var bar = Char.GetNumericValue(d[7]);
-                                    double classS6 = bar;
-                                    wV.feetS1 = classS6;
-                                }
+                            using (var srbs = new StringReader(savess[6]))
+                            {
+                                srbs.Read(d, 0, 9);
+                                var bar = char.GetNumericValue(d[7]);
+                                var classS6 = bar;
+                                wV.feetS1 = classS6;
                             }
                         }
                     }
