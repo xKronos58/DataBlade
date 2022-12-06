@@ -5,13 +5,14 @@ namespace Game
 {
     public class CNSLart
     {
+        private cho15C14C ch = new cho15C14C();
+        
         public string[] cutSceneOneText =
         {
             "*Slam* The jail door slams.",
             "[You]: What am i going to do now",
             "[???]: Hey you want to get out of this place?",
             "[Cho]: Do you want to talk to the stranger? (y/n)",
-            ""
         };
 
         private readonly int dialogSleepTime1 = 2000;
@@ -30,6 +31,7 @@ namespace Game
             " ░                                      ░                             ░      " //9
         };
 
+        private byte numInArr = 0;
         public void firstCutScene()
         {
             Console.WriteLine("The game has started!");
@@ -37,9 +39,22 @@ namespace Game
             Console.Clear();
             foreach (var item in cutSceneOneText)
             {
+                numInArr++;
+                if (numInArr == 1)
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                } else if (numInArr == 4)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+                else
+                {
+                    Console.ResetColor();
+                }
                 Console.WriteLine(item);
                 Thread.Sleep(dialogSleepTime1);
             }
+            
         }
     }
 }

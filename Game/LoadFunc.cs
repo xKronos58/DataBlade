@@ -23,7 +23,6 @@ namespace Game
         {
             //Gets the files in the saves dir
             foreach (var file in Directory.GetFiles(@"C:\\Users\\Public\\DatabladeSaves\\"))
-                // foreach (string file in Directory.GetFiles(@"C:\\Users\\Finley\\Documents\\DataBladeSaves\\"))
             {
                 //Lists all of the files to console 
                 Console.WriteLine("(" + numF + ") " + file);

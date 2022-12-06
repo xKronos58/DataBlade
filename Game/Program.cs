@@ -11,6 +11,7 @@ namespace Game
             var cha = new CharCreation();
             var lf = new LoadFunc();
             var ls = new stats();
+            var ch = new cho15C14C();
 
 
             //Player stats
@@ -79,6 +80,7 @@ namespace Game
             clearTimer();
 
             art.firstCutScene();
+            ch.c1_5_4();
         }
     }
 }
