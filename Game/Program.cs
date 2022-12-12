@@ -60,9 +60,13 @@ namespace Game
                 case "load-recent":
                     lf.recentSave();
                     break;
+                case "pz1":
+                    goto pz1;
                 default:
                     Console.WriteLine(
-                        "There was a null or incorrect value\nPlease try again\nErr: 002, Unexpected symbol (check _errList.json for details)");
+                        "There was a null or incorrect value\n" +
+                        "Please try again\n" +
+                        "Err: 002, Unexpected symbol (check _errList.json for details)");
                     goto inchrC;
             }
 
@@ -80,6 +84,7 @@ namespace Game
             clearTimer();
 
             art.firstCutScene();
+            pz1: ;
             ch.c1_5_4();
         }
     }
