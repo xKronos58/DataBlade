@@ -60,6 +60,7 @@ namespace Game
                     // }
                     
                     pz1.drawMaze();
+                    pz1.drawMaze2();
                 } else if (puz1 == "n")
                 {
                     Console.WriteLine("[???] : Well there is only one other way out...\n" +
