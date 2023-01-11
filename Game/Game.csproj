@@ -46,6 +46,7 @@
         <Compile Include="CharPresets.cs" />
         <Compile Include="CNSLart.cs" />
         <Compile Include="LoadFunc.cs" />
+        <Compile Include="mazeBuilder.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="puzzle1Art.cs" />

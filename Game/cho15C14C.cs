@@ -51,7 +51,7 @@ namespace Game
                 
                 recho2:;
                 string puz1 = Console.ReadLine().ToLower();
-
+                
                 if (puz1 == "y")
                 {
                     // foreach (var )
@@ -60,11 +60,17 @@ namespace Game
                     // }
                     
                     pz1.drawMaze();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Now time for the real one...");
+                    Console.ResetColor();
                     pz1.drawMaze2();
                 } else if (puz1 == "n")
                 {
                     Console.WriteLine("[???] : Well there is only one other way out...\n" +
                                       "        No fight");
+                } else if (puz1 == "skip")
+                {
+                    // odn
                 }
                 else
                 {

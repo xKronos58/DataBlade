@@ -12,6 +12,7 @@ namespace Game
             var lf = new LoadFunc();
             var ls = new stats();
             var ch = new cho15C14C();
+            var mb = new mazeBuilder();
 
 
             //Player stats
@@ -62,6 +63,8 @@ namespace Game
                     break;
                 case "pz1":
                     goto pz1;
+                case "mazeb":
+                    break;
                 default:
                     Console.WriteLine(
                         "There was a null or incorrect value\n" +

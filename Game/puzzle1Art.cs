@@ -154,7 +154,7 @@ namespace Game
             
             while (playerX != 1 || playerY != 1)
             {
-                pzl1();
+                pzl2();
             }
         }
 
@@ -179,7 +179,7 @@ namespace Game
             uxk: ;
             string Go = Console.ReadLine().ToLower();
 
-            maze1[playerX, playerY] = " ";
+            maze1[playerX, playerY] = "O";
             
             switch (Go)
             {
@@ -301,6 +301,13 @@ namespace Game
             Console.WriteLine("X: " + playerX + ", Y: " + playerY);
         }
         public void pzl2() {
+            
+            //TODO Fix player pos clearing 
+            
+            //TODO Fix hit-boxes / constraints w/ maze
+            
+            //TODO Make key req. 
+            
         Console.Clear();
         byte printM = 0;
             while (printM != 6)
@@ -320,7 +327,7 @@ namespace Game
             uxk: ;
             string Go = Console.ReadLine().ToLower();
 
-            maze2[playerX, playerY] = " ";
+            maze2[playerX, playerY] = "O";
             
             //Can move statements
 
@@ -375,7 +382,7 @@ namespace Game
                 int oldX = playerX;
                 int oldY = playerY;
 
-                int[,] erpo = new int[1,7];
+                int[,] erpo = new int[2,7];
                 erpo[0, 0] = 8;
                 erpo[1, 0] = 3;
                     
@@ -536,6 +543,13 @@ namespace Game
             //     outBinaryMaze++;
             // }
             Console.WriteLine("X: " + playerX + ", Y: " + playerY);
+        }
+
+        void posM2Checker()
+        {
+            //Gets obstacles / objs
+            
+            // if ()
         }
     }
 }
