@@ -35,7 +35,7 @@ namespace Game
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("\nWelcome to GAME NAME");
             Console.ResetColor();
-
+            
             //Character creation
 
             Console.WriteLine("\n\n\nDo you wish to create your own character or have a randomised one?" +

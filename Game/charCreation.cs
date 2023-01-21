@@ -4,8 +4,13 @@ using System.Threading;
 
 namespace Game
 {
+    // ReSharper disable all InconsistentNaming
+    // Lmao this shut up 53+ warnings... 
     public class CharCreation
     {
+        private CustomShowFunc show = new CustomShowFunc();
+        private headAscii Head = new headAscii();
+        
         public static string time = DateTime.Now.ToString("y.m.d.HH.mm.ss");
 
         private string cla;
@@ -126,7 +131,7 @@ namespace Game
             0, //arms           |   2   |
             0, //legs           |   3   |
             0, //hands          |   4   |
-            0 //shoes &! Feet  |   5   |
+            0  //shoes &! Feet  |   5   |
         };
 
         public void randomChar()
@@ -417,16 +422,313 @@ namespace Game
         //TODO make classes (2-8) and ascii art for all classes 
         
         /// <summary>
+        /// Shows the ascii art for the specific choice
+        /// </summary>
+        private void class1A()
+        {
+            switch (visAtt[0])
+            {
+                case 1:// If first class is selected, Goes onto the head selection
+                    foreach (string element in c1a)
+                    {
+                        Console.WriteLine(element);
+                    }
+
+                    int headnum = 0;
+                    //Choosing the head of the player
+                    Console.WriteLine("Chose which head you want. (type next for the next head "+
+                                "or a num to skip then select to confirm)");
+                    nxtxh: ;
+                    string Head = Console.ReadLine().ToLower();
+                    switch (Head)
+                    {
+                        case "1":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head1Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+            
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+        
+                            headnum = 1;
+                            goto nxtxh;
+                        case "2":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head2Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+                            goto nxtxh;
+                        case "3":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head3Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+        
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+                            goto nxtxh;
+                        case "4":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head4Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+                            goto nxtxh;
+                        case "5":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head5Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+                            goto nxtxh;
+                        case "6":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head6Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+                            goto nxtxh;
+                        case "next":
+                            Console.Clear();
+                            show.NextHead();
+                            goto nxtxh;
+                        case "prev":
+                            Console.Clear();
+                           show.PrevHead();
+                        goto nxtxh;
+                        case "select":
+                            Console.Clear();
+                            visAtt[1] = headnum;
+                            break;
+                        default:
+                            Console.Clear();
+                            Console.WriteLine("Unexpected charecter / outside of bounds." +
+                                              "\n please try agin");
+                            goto nxtxh;
+                    }       
+                    Thread.Sleep(2000);
+                    break;
+                case 2:
+                    foreach (string element in c2a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 3:
+                    foreach (string element in c3a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break; 
+                case 4:
+                    foreach (string element in c4a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break; 
+                case 5:
+                    foreach (string element in c5a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break; 
+                case 6:
+                    foreach (string element in c6a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break; 
+                case 7: 
+                    foreach (string element in c7a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break; 
+                case 8:
+                    foreach (string element in c8a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+            }
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the first class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc1()
+        {
+            foreach (string element in cc1a)
+            {
+                Console.WriteLine(element);
+            }
+
+            Console.WriteLine("type anything to go back");
+            string ccvo = Console.ReadLine();
+            Console.Clear();
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the second class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc2()
+        {
+            foreach (string element in cc2a)
+            {
+                Console.WriteLine(element);
+            }
+
+            Console.WriteLine("type anything to go back");
+            string ccvo = Console.ReadLine();
+            Console.Clear();
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the third class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc3()
+        {
+            foreach (string element in cc3a)
+            {
+                Console.WriteLine(element);
+            }
+
+            Console.WriteLine("type anything to go back");
+            string ccvo = Console.ReadLine();
+            Console.Clear();
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the fourth class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc4()
+        {
+            foreach (string element in cc4a)
+            {
+                Console.WriteLine(element);
+            }
+
+            Console.WriteLine("type anything to go back");
+            string ccvo = Console.ReadLine();
+            Console.Clear();
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the fifth class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc5()
+        {
+            foreach (string element in cc5a)
+            {
+                Console.WriteLine(element);
+            }
+
+            Console.WriteLine("type anything to go back");
+            string ccvo = Console.ReadLine();
+            Console.Clear();
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the sixth class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc6()
+        {
+            foreach (string element in cc6a)
+            {
+                Console.WriteLine(element);
+            }
+
+            Console.WriteLine("type anything to go back");
+            string ccvo = Console.ReadLine();
+            Console.Clear();
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the seventh class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc7()
+        {
+            foreach (string element in cc7a)
+            {
+                Console.WriteLine(element);
+            }
+
+            Console.WriteLine("type anything to go back");
+            string ccvo = Console.ReadLine();
+            Console.Clear();
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the eighth class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc8()
+        {
+            foreach (string element in cc8a)
+            {
+                Console.WriteLine(element);
+            }
+
+            Console.WriteLine("type anything to go back");
+            string ccvo = Console.ReadLine();
+            Console.Clear();
+        }
+        
+        /// <summary>
         /// Class 1 art (6x30) [Human]
         /// </summary>
         public string[] c1a =
         {
-            "1 This is the ascii art for cl 1",
-            "2 :)",
-            "3",
-            "4",
-            "5",
-            "6"
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
         };
         
         /// <summary>
@@ -492,137 +794,81 @@ namespace Game
             " :)"
         };
         
+        /// <summary>
+        /// Class 1 art (6x15) [Human] + Stats for cc1
+        /// </summary>
+        public string[] cc1a =
+        {
+            "1 This is the ascii art for cl 1",
+            "2 :)",
+            "3",
+            "4",
+            "5",
+            "6"
+        };
         
         /// <summary>
-        /// Shows the ascii art for the specific choice
+        /// Class 2 art (6x15) [---] + Stats for cc2
         /// </summary>
-        private void class1A()
+        public string[] cc2a =
         {
-            switch (visAtt[0])
-            {
-                case 1:
-                    foreach (string element in c1a)
-                    {
-                        Console.WriteLine(element);
-                    }
-                    Thread.Sleep(2000);
-                    break;
-                case 2:
-                    foreach (string element in c2a)
-                    {
-                        Console.WriteLine(element);
-                    }
-                    break;
-                case 3:
-                    foreach (string element in c3a)
-                    {
-                        Console.WriteLine(element);
-                    }
-                    break; 
-                case 4:
-                    foreach (string element in c4a)
-                    {
-                        Console.WriteLine(element);
-                    }
-                    break; 
-                case 5:
-                    foreach (string element in c5a)
-                    {
-                        Console.WriteLine(element);
-                    }
-                    break; 
-                case 6:
-                    foreach (string element in c6a)
-                    {
-                        Console.WriteLine(element);
-                    }
-                    break; 
-                case 7: 
-                    foreach (string element in c7a)
-                    {
-                        Console.WriteLine(element);
-                    }
-                    break; 
-                case 8:
-                    foreach (string element in c8a)
-                    {
-                        Console.WriteLine(element);
-                    }
-                    break;
-            }
-        }
+            "This is the ascii art for cl 2",
+            " :)"
+        };
         
         /// <summary>
-        /// Shows an image (Ascii art) of the first class then the related stats
-        /// [Ascii art image 6x15]
+        /// Class 3 art (6x15) [---] + Stats for cc3
         /// </summary>
-        private void cc1()
+        public string[] cc3a =
         {
-            
-        }
+            "This is the ascii art for cl 3",
+            " :)"
+        };
         
         /// <summary>
-        /// Shows an image (Ascii art) of the second class then the related stats
-        /// [Ascii art image 6x15]
+        /// Class 4 art (6x15) [---] + Stats for cc4
         /// </summary>
-        private void cc2()
+        public string[] cc4a =
         {
-            
-        }
+            "This is the ascii art for cl 4",
+            " :)"
+        };
         
         /// <summary>
-        /// Shows an image (Ascii art) of the third class then the related stats
-        /// [Ascii art image 6x15]
+        /// Class 5 art (6x15) [---] + Stats for cc5
         /// </summary>
-        private void cc3()
+        public string[] cc5a =
         {
-            
-        }
+            "This is the ascii art for cl 5",
+            " :)"
+        };
         
         /// <summary>
-        /// Shows an image (Ascii art) of the fourth class then the related stats
-        /// [Ascii art image 6x15]
+        /// Class 6 art (6x15) [---] + Stats for cc6
         /// </summary>
-        private void cc4()
+        public string[] cc6a =
         {
-            
-        }
+            "This is the ascii art for cl 6",
+            " :)"
+        };
         
         /// <summary>
-        /// Shows an image (Ascii art) of the fifth class then the related stats
-        /// [Ascii art image 6x15]
+        /// Class 7 art (6x15) [---] + Stats for cc7
         /// </summary>
-        private void cc5()
+        public string[] cc7a =
         {
-            
-        }
+            "This is the ascii art for cl 7",
+            " :)"
+        };
         
         /// <summary>
-        /// Shows an image (Ascii art) of the sixth class then the related stats
-        /// [Ascii art image 6x15]
+        /// Class 8 art (6x15) [---] + Stats for cc8
         /// </summary>
-        private void cc6()
+        public string[] cc8a =
         {
-            
-        }
-        
-        /// <summary>
-        /// Shows an image (Ascii art) of the seventh class then the related stats
-        /// [Ascii art image 6x15]
-        /// </summary>
-        private void cc7()
-        {
-            
-        }
-        
-        /// <summary>
-        /// Shows an image (Ascii art) of the eighth class then the related stats
-        /// [Ascii art image 6x15]
-        /// </summary>
-        private void cc8()
-        {
-            
-        }
-        
+            "This is the ascii art for cl 8",
+            " :)"
+        };
+
     }
 }

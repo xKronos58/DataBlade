@@ -45,6 +45,8 @@
         <Compile Include="charCreation.cs" />
         <Compile Include="CharPresets.cs" />
         <Compile Include="CNSLart.cs" />
+        <Compile Include="CustomShowFunc.cs" />
+        <Compile Include="headAscii.cs" />
         <Compile Include="LoadFunc.cs" />
         <Compile Include="mazeBuilder.cs" />
         <Compile Include="Program.cs" />
