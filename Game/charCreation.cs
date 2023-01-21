@@ -372,6 +372,7 @@ namespace Game
         /// </summary>
         public void customCreation()
         {
+
             rechoc: ;
             statsv: ;
             Console.WriteLine("Which Class do you want to use? (1-8) " +
@@ -380,37 +381,44 @@ namespace Game
             if (class_ == "1 --v" || class_ == "1--v") {
                 cc1();
                 goto statsv;
-            } if (class_ == "1 --v" || class_ == "1--v") {
+            } if (class_ == "2 --v" || class_ == "2--v") {
                 cc2();
                 goto statsv;
-            } if (class_ == "1 --v" || class_ == "1--v") {
+            } if (class_ == "3 --v" || class_ == "3--v") {
                 cc3();
                 goto statsv;
-            } if (class_ == "1 --v" || class_ == "1--v") {
+            } if (class_ == "4 --v" || class_ == "4--v") {
                 cc4();
                 goto statsv;
-            } if (class_ == "1 --v" || class_ == "1--v") {
+            } if (class_ == "5 --v" || class_ == "5--v") {
                 cc5();
                 goto statsv;
-            } if (class_ == "1 --v" || class_ == "1--v") {
+            } if (class_ == "6 --v" || class_ == "6--v") {
                 cc6();
                 goto statsv;
-            } if (class_ == "1 --v" || class_ == "1--v") {
+            } if (class_ == "7 --v" || class_ == "7--v") {
                 cc7();
                 goto statsv;
-            } if (class_ == "1 --v" || class_ == "1--v") {
+            } if (class_ == "8 --v" || class_ == "8--v") {
                 cc8();
                 goto statsv;
-            } if (class_ != "1" || class_ != "2" || class_ != "3" 
-                  || class_ != "4" || class_ != "5" || class_ != "6"
-                  || class_ != "7" || class_ != "8")
-            {
-                Console.WriteLine("Outside of bounds. Please input a number between 1-8\n" +
-                                  "make sure there are no letters in the statement");
             }
             int classi = Int32.Parse(class_);
+            
+            //Asks player if the class is what the want to go with
+            
+            Console.WriteLine("You have chosen class: " + classi + ". Is that correct? (y/n)");
+            string crcCl = Console.ReadLine().ToLower();
+            if (crcCl == "y") {
+                goto cont;
+            } else {
+                goto rechoc; }
+            cont: ;
+            //if correct set the visAtt[Class] to the chosen class
             visAtt[0] = classi;
-            if (visAtt[0] <= 0 || visAtt[0] >= 8)
+            
+            //Catchment for incorrect numbers
+            if (visAtt[0] <= 0 || visAtt[0] >= 9)
             {
                 Console.WriteLine("Outside of bounds. Please input a number between 1-8");
                 goto rechoc;
@@ -420,7 +428,14 @@ namespace Game
 
         //Note: Ascii art can be 6 lines with 1 line for user inp.
         //TODO make classes (2-8) and ascii art for all classes 
-        
+        int headnum0 = 0;
+        int headnum1 = 0;
+        int headnum2 = 0;
+        int headnum3 = 0;
+        int headnum4 = 0;
+        int headnum5 = 0;
+        int headnum6 = 0;
+        int headnum7 = 0;
         /// <summary>
         /// Shows the ascii art for the specific choice
         /// </summary>
@@ -433,8 +448,7 @@ namespace Game
                     {
                         Console.WriteLine(element);
                     }
-
-                    int headnum = 0;
+                    
                     //Choosing the head of the player
                     Console.WriteLine("Chose which head you want. (type next for the next head "+
                                 "or a num to skip then select to confirm)");
@@ -454,7 +468,7 @@ namespace Game
                                 Console.WriteLine(element);
                             }
         
-                            headnum = 1;
+                            headnum0 = 1;
                             goto nxtxh;
                         case "2":
                             Console.Clear();
@@ -467,6 +481,7 @@ namespace Game
                             {
                                 Console.WriteLine(element);
                             }
+                            headnum0 = 2;
                             goto nxtxh;
                         case "3":
                             Console.Clear();
@@ -479,6 +494,7 @@ namespace Game
                             {
                                 Console.WriteLine(element);
                             }
+                            headnum0 = 3;
                             goto nxtxh;
                         case "4":
                             Console.Clear();
@@ -491,6 +507,7 @@ namespace Game
                             {
                                 Console.WriteLine(element);
                             }
+                            headnum0 = 4;
                             goto nxtxh;
                         case "5":
                             Console.Clear();
@@ -503,6 +520,7 @@ namespace Game
                             {
                                 Console.WriteLine(element);
                             }
+                            headnum0 = 5;
                             goto nxtxh;
                         case "6":
                             Console.Clear();
@@ -515,10 +533,12 @@ namespace Game
                             {
                                 Console.WriteLine(element);
                             }
+                            headnum0 = 6;
                             goto nxtxh;
                         case "next":
                             Console.Clear();
                             show.NextHead();
+                            headnum0++;
                             goto nxtxh;
                         case "prev":
                             Console.Clear();
@@ -526,7 +546,120 @@ namespace Game
                         goto nxtxh;
                         case "select":
                             Console.Clear();
-                            visAtt[1] = headnum;
+                            visAtt[1] = headnum0;
+                            break;
+                        default:
+                            Console.Clear();
+                            Console.WriteLine("Unexpected charecter / outside of bounds." +
+                                              "\n please try agin");
+                            goto nxtxh;
+                    }
+                    break;
+                case 2:
+                    foreach (string element in c2a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    
+                    //Choosing the head of the player
+                    Console.WriteLine("Chose which head you want. (type next for the next head "+
+                                "or a num to skip then select to confirm)");
+                    nxtxh1: ;
+                    string Head1 = Console.ReadLine().ToLower();
+                    switch (Head1)
+                    {
+                        case "1":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head1Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+            
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+        
+                            headnum1 = 1;
+                            goto nxtxh1;
+                        case "2":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head2Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+                            headnum1 = 2;
+                            goto nxtxh1;
+                        case "3":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head3Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+        
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+                            headnum1 = 3;
+                            goto nxtxh1;
+                        case "4":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head4Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+                            headnum1 = 4;
+                            goto nxtxh1;
+                        case "5":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head5Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+                            headnum1 = 5;
+                            goto nxtxh1;
+                        case "6":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head6Ascii)
+                            {
+                                Console.WriteLine(element);                        
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+                            headnum1 = 6;
+                            goto nxtxh1;
+                        case "next":
+                            Console.Clear();
+                            show.NextHead();
+                            headnum1++;
+                            goto nxtxh1;
+                        case "prev":
+                            Console.Clear();
+                           show.PrevHead();
+                            headnum1--;
+                        goto nxtxh;
+                        case "select":
+                            Console.Clear();
+                            visAtt[1] = headnum1;
                             break;
                         default:
                             Console.Clear();
@@ -534,49 +667,696 @@ namespace Game
                                               "\n please try agin");
                             goto nxtxh;
                     }       
-                    Thread.Sleep(2000);
-                    break;
-                case 2:
-                    foreach (string element in c2a)
-                    {
-                        Console.WriteLine(element);
-                    }
                     break;
                 case 3:
                     foreach (string element in c3a)
                     {
                         Console.WriteLine(element);
                     }
-                    break; 
+                    //Choosing the head of the player
+                    Console.WriteLine("Chose which head you want. (type next for the next head "+
+                                "or a num to skip then select to confirm)");
+                    nxtxh2: ;
+                    string Head2 = Console.ReadLine().ToLower();
+                    switch (Head2)
+                    {
+                        case "1":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head1Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum2 = 1;
+                            goto nxtxh2;
+                        case "2":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head2Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum2 = 2;
+                            goto nxtxh2;
+                        case "3":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head3Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum2 = 3;
+                            goto nxtxh2;
+                        case "4":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head4Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum2 = 4;
+                            goto nxtxh2;
+                        case "5":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head5Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum2 = 5;
+                            goto nxtxh2;
+                        case "6":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head6Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum2 = 6;
+                            goto nxtxh2;
+                        case "next":
+                            Console.Clear();
+                            show.NextHead();
+                            headnum2++;
+                            goto nxtxh2;
+                        case "prev":
+                            Console.Clear();
+                            show.PrevHead();
+                            headnum2--;
+                            goto nxtxh2;
+                        case "select":
+                            Console.Clear();
+                            visAtt[1] = headnum2;
+                            break;
+                        default:
+                            Console.WriteLine("Unexpected statement. Please try again...");
+                            goto nxtxh2;
+                        }
+                    break;
                 case 4:
                     foreach (string element in c4a)
                     {
                         Console.WriteLine(element);
                     }
+                    //Choosing the head of the player
+                    Console.WriteLine("Chose which head you want. (type next for the next head "+
+                                "or a num to skip then select to confirm)");
+                    nxtxh3: ;
+                    string Head3 = Console.ReadLine().ToLower();
+                    switch (Head3)
+                    {
+                        case "1":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head1Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum3 = 1;
+                            goto nxtxh3;
+                        case "2":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head2Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum3 = 2;
+                            goto nxtxh3;
+                        case "3":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head3Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum3 = 3;
+                            goto nxtxh3;
+                        case "4":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head4Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum3 = 4;
+                            goto nxtxh3;
+                        case "5":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head5Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum3 = 5;
+                            goto nxtxh3;
+                        case "6":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head6Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum3 = 6;
+                            goto nxtxh3;
+                        case "next":
+                            Console.Clear();
+                            show.NextHead();
+                            headnum3++;
+                            goto nxtxh3;
+                        case "prev":
+                            Console.Clear();
+                            show.PrevHead();
+                            headnum3--;
+                            goto nxtxh3;
+                        case "select":
+                            Console.Clear();
+                            visAtt[1] = headnum3;
+                            break;
+                        default:
+                            Console.WriteLine("Unexpected statement. Please try again...");
+                            goto nxtxh3;
+                        }
                     break; 
                 case 5:
                     foreach (string element in c5a)
                     {
                         Console.WriteLine(element);
                     }
-                    break; 
+                    //Choosing the head of the player
+                    Console.WriteLine("Chose which head you want. (type next for the next head "+
+                                "or a num to skip then select to confirm)");
+                    nxtxh4: ;
+                    string Head4 = Console.ReadLine().ToLower();
+                    switch (Head4)
+                    {
+                        case "1":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head1Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum4 = 1;
+                            goto nxtxh4;
+                        case "2":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head2Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum4 = 2;
+                            goto nxtxh4;
+                        case "3":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head3Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum4 = 3;
+                            goto nxtxh4;
+                        case "4":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head4Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum4 = 4;
+                            goto nxtxh4;
+                        case "5":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head5Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum4 = 5;
+                            goto nxtxh4;
+                        case "6":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head6Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum4 = 6;
+                            goto nxtxh4;
+                        case "next":
+                            Console.Clear();
+                            show.NextHead();
+                            headnum4++;
+                            goto nxtxh4;
+                        case "prev":
+                            Console.Clear();
+                            show.PrevHead();
+                            headnum4--;
+                            goto nxtxh4;
+                        case "select":
+                            Console.Clear();
+                            visAtt[1] = headnum4;
+                            break;
+                        default:
+                            Console.WriteLine("Unexpected statement. Please try again...");
+                            goto nxtxh4;
+                        }
+                    break;
                 case 6:
                     foreach (string element in c6a)
                     {
                         Console.WriteLine(element);
                     }
-                    break; 
+                    //Choosing the head of the player
+                    Console.WriteLine("Chose which head you want. (type next for the next head "+
+                                "or a num to skip then select to confirm)");
+                    nxtxh5: ;
+                    string Head5 = Console.ReadLine().ToLower();
+                    switch (Head5)
+                    {
+                        case "1":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head1Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum5 = 1;
+                            goto nxtxh5;
+                        case "2":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head2Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum5 = 2;
+                            goto nxtxh5;
+                        case "3":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head3Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum5 = 3;
+                            goto nxtxh5;
+                        case "4":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head4Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum5 = 4;
+                            goto nxtxh5;
+                        case "5":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head5Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum5 = 5;
+                            goto nxtxh5;
+                        case "6":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head6Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum5 = 6;
+                            goto nxtxh5;
+                        case "next":
+                            Console.Clear();
+                            show.NextHead();
+                            headnum5++;
+                            goto nxtxh5;
+                        case "prev":
+                            Console.Clear();
+                            show.PrevHead();
+                            headnum5--;
+                            goto nxtxh5;
+                        case "select":
+                            Console.Clear();
+                            visAtt[1] = headnum5;
+                            break;
+                        default:
+                            Console.WriteLine("Unexpected statement. Please try again...");
+                            goto nxtxh5;
+                        }
+                    break;
                 case 7: 
                     foreach (string element in c7a)
                     {
                         Console.WriteLine(element);
                     }
-                    break; 
+                    //Choosing the head of the player
+                    Console.WriteLine("Chose which head you want. (type next for the next head "+
+                                "or a num to skip then select to confirm)");
+                    nxtxh6: ;
+                    string Head6 = Console.ReadLine().ToLower();
+                    switch (Head6)
+                    {
+                        case "1":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head1Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum6 = 1;
+                            goto nxtxh6;
+                        case "2":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head2Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum6 = 2;
+                            goto nxtxh6;
+                        case "3":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head3Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum6 = 3;
+                            goto nxtxh6;
+                        case "4":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head4Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum6 = 4;
+                            goto nxtxh6;
+                        case "5":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head5Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum6 = 5;
+                            goto nxtxh6;
+                        case "6":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head6Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum6 = 6;
+                            goto nxtxh6;
+                        case "next":
+                            Console.Clear();
+                            show.NextHead();
+                            headnum2++;
+                            goto nxtxh6;
+                        case "prev":
+                            Console.Clear();
+                            show.PrevHead();
+                            headnum6--;
+                            goto nxtxh6;
+                        case "select":
+                            Console.Clear();
+                            visAtt[1] = headnum6;
+                            break;
+                        default:
+                            Console.WriteLine("Unexpected statement. Please try again...");
+                            goto nxtxh6;
+                        }
+                    break;
                 case 8:
                     foreach (string element in c8a)
                     {
                         Console.WriteLine(element);
                     }
+                    //Choosing the head of the player
+                    Console.WriteLine("Chose which head you want. (type next for the next head "+
+                                "or a num to skip then select to confirm)");
+                    nxtxh7: ;
+                    string Head7 = Console.ReadLine().ToLower();
+                    switch (Head7)
+                    {
+                        case "1":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head1Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum7 = 1;
+                            goto nxtxh7;
+                        case "2":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head2Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum7 = 2;
+                            goto nxtxh7;
+                        case "3":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head3Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum7 = 3;
+                            goto nxtxh7;
+                        case "4":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head4Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum7 = 4;
+                            goto nxtxh7;
+                        case "5":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head5Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum7 = 5;
+                            goto nxtxh7;
+                        case "6":
+                            Console.Clear();
+                            foreach (string element in this.Head.Head6Ascii)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            foreach (string element in this.Head.LowerBody)
+                            {
+                                Console.WriteLine(element);
+                            }
+
+                            headnum7 = 6;
+                            goto nxtxh7;
+                        case "next":
+                            Console.Clear();
+                            show.NextHead();
+                            headnum7++;
+                            goto nxtxh7;
+                        case "prev":
+                            Console.Clear();
+                            show.PrevHead();
+                            headnum7--;
+                            goto nxtxh7;
+                        case "select":
+                            Console.Clear();
+                            visAtt[1] = headnum7;
+                            break;
+                        default:
+                            Console.WriteLine("Unexpected statement. Please try again...");
+                            goto nxtxh7;
+                        }
                     break;
             }
         }
@@ -592,7 +1372,7 @@ namespace Game
                 Console.WriteLine(element);
             }
 
-            Console.WriteLine("type anything to go back");
+            Console.WriteLine("Hit \"Enter\" to go back");
             string ccvo = Console.ReadLine();
             Console.Clear();
         }
@@ -608,7 +1388,7 @@ namespace Game
                 Console.WriteLine(element);
             }
 
-            Console.WriteLine("type anything to go back");
+            Console.WriteLine("Hit \"Enter\" to go back");
             string ccvo = Console.ReadLine();
             Console.Clear();
         }
@@ -624,7 +1404,7 @@ namespace Game
                 Console.WriteLine(element);
             }
 
-            Console.WriteLine("type anything to go back");
+            Console.WriteLine("Hit \"Enter\" to go back");
             string ccvo = Console.ReadLine();
             Console.Clear();
         }
@@ -640,7 +1420,7 @@ namespace Game
                 Console.WriteLine(element);
             }
 
-            Console.WriteLine("type anything to go back");
+            Console.WriteLine("Hit \"Enter\" to go back");
             string ccvo = Console.ReadLine();
             Console.Clear();
         }
@@ -656,7 +1436,7 @@ namespace Game
                 Console.WriteLine(element);
             }
 
-            Console.WriteLine("type anything to go back");
+            Console.WriteLine("Hit \"Enter\" to go back");
             string ccvo = Console.ReadLine();
             Console.Clear();
         }
@@ -672,7 +1452,7 @@ namespace Game
                 Console.WriteLine(element);
             }
 
-            Console.WriteLine("type anything to go back");
+            Console.WriteLine("Hit \"Enter\" to go back");
             string ccvo = Console.ReadLine();
             Console.Clear();
         }
@@ -688,7 +1468,7 @@ namespace Game
                 Console.WriteLine(element);
             }
 
-            Console.WriteLine("type anything to go back");
+            Console.WriteLine("Hit \"Enter\" to go back");
             string ccvo = Console.ReadLine();
             Console.Clear();
         }
@@ -704,7 +1484,7 @@ namespace Game
                 Console.WriteLine(element);
             }
 
-            Console.WriteLine("type anything to go back");
+            Console.WriteLine("Hit \"Enter\" to go back");
             string ccvo = Console.ReadLine();
             Console.Clear();
         }
@@ -736,8 +1516,21 @@ namespace Game
         /// </summary>
         public string[] c2a =
         {
-            "This is the ascii art for cl 2",
-            " :)"
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
         };
         
         /// <summary>
@@ -745,8 +1538,21 @@ namespace Game
         /// </summary>
         public string[] c3a =
         {
-            "This is the ascii art for cl 3",
-            " :)"
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
         };
         
         /// <summary>
@@ -754,8 +1560,21 @@ namespace Game
         /// </summary>
         public string[] c4a =
         {
-            "This is the ascii art for cl 4",
-            " :)"
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
         };
         
         /// <summary>
@@ -763,8 +1582,21 @@ namespace Game
         /// </summary>
         public string[] c5a =
         {
-            "This is the ascii art for cl 5",
-            " :)"
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
         };
         
         /// <summary>
@@ -772,8 +1604,21 @@ namespace Game
         /// </summary>
         public string[] c6a =
         {
-            "This is the ascii art for cl 6",
-            " :)"
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
         };
         
         /// <summary>
@@ -781,8 +1626,21 @@ namespace Game
         /// </summary>
         public string[] c7a =
         {
-            "This is the ascii art for cl 7",
-            " :)"
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
         };
         
         /// <summary>
@@ -790,8 +1648,21 @@ namespace Game
         /// </summary>
         public string[] c8a =
         {
-            "This is the ascii art for cl 8",
-            " :)"
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
         };
         
         /// <summary>
@@ -799,12 +1670,21 @@ namespace Game
         /// </summary>
         public string[] cc1a =
         {
-            "1 This is the ascii art for cl 1",
-            "2 :)",
-            "3",
-            "4",
-            "5",
-            "6"
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
         };
         
         /// <summary>
@@ -812,8 +1692,21 @@ namespace Game
         /// </summary>
         public string[] cc2a =
         {
-            "This is the ascii art for cl 2",
-            " :)"
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
         };
         
         /// <summary>
@@ -821,8 +1714,21 @@ namespace Game
         /// </summary>
         public string[] cc3a =
         {
-            "This is the ascii art for cl 3",
-            " :)"
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
         };
         
         /// <summary>
@@ -830,8 +1736,21 @@ namespace Game
         /// </summary>
         public string[] cc4a =
         {
-            "This is the ascii art for cl 4",
-            " :)"
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
         };
         
         /// <summary>
@@ -839,8 +1758,21 @@ namespace Game
         /// </summary>
         public string[] cc5a =
         {
-            "This is the ascii art for cl 5",
-            " :)"
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
         };
         
         /// <summary>
@@ -848,8 +1780,21 @@ namespace Game
         /// </summary>
         public string[] cc6a =
         {
-            "This is the ascii art for cl 6",
-            " :)"
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
         };
         
         /// <summary>
@@ -857,8 +1802,21 @@ namespace Game
         /// </summary>
         public string[] cc7a =
         {
-            "This is the ascii art for cl 7",
-            " :)"
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
         };
         
         /// <summary>
@@ -866,8 +1824,21 @@ namespace Game
         /// </summary>
         public string[] cc8a =
         {
-            "This is the ascii art for cl 8",
-            " :)"
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
         };
 
     }

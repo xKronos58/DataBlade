@@ -1,0 +1,17 @@
+
+
+Brainstoming
+
+Head + lower body
+
+Head[(int)visAtt[1]] + Torso /*(W/ default arms and hands)*/ + lower body
+
+Head[(int)visAtt[1]] + TorsoS[(int)visAtt[2]] + Arms /* W/ default hands */ + lower body
+
+Head[(int)visAtt[1]] + TorsoS[(int)visAtt[2]] + ArmsS[(int)visAtt[3]] + Hands + lower body
+
+Head[(int)visAtt[1]] + TorsoS[(int)visAtt[2]] + ArmsS[(int)visAtt[3]] + Hands[(int)visAtt[4]] + legs + shoes /* Default */
+
+Head[(int)visAtt[1]] + TorsoS[(int)visAtt[2]] + ArmsS[(int)visAtt[3]] + Hands[(int)visAtt[4]] + Legs[(int)visAtt[5]] + Shoes
+
+Head[(int)visAtt[1]] + ArmsS1[(int)visAtt[3]] + Hands1[(int)visAtt[4]] + TorsoS[(int)visAtt[2]] + ArmsS2[(int)visAtt[3]] + Hands2[(int)visAtt[4]] + Legs[(int)visAtt[5]] + Shoes[(int)visAtt[6]]
