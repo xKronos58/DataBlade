@@ -52,7 +52,7 @@ namespace Game
                     cha.presetChar();
                     break;
                 case "cstm":
-                    cha.customChar();
+                    cha.customCreation();
                     break;
                 case "load":
                     lf.loadSave();

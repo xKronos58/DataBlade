@@ -361,5 +361,268 @@ namespace Game
             if (CSTMCLASSI <= 9)
                 Console.WriteLine("Err: 002, Unexpected symbol (Refer to _errList.json for more details)");
         }
+
+        /// <summary>
+        /// Allows the player to make a custom character
+        /// </summary>
+        public void customCreation()
+        {
+            rechoc: ;
+            statsv: ;
+            Console.WriteLine("Which Class do you want to use? (1-8) " +
+                              "\nOr use \" --v\" at the end of the statement to see extra about the class");
+            string class_ = Console.ReadLine();
+            if (class_ == "1 --v" || class_ == "1--v") {
+                cc1();
+                goto statsv;
+            } if (class_ == "1 --v" || class_ == "1--v") {
+                cc2();
+                goto statsv;
+            } if (class_ == "1 --v" || class_ == "1--v") {
+                cc3();
+                goto statsv;
+            } if (class_ == "1 --v" || class_ == "1--v") {
+                cc4();
+                goto statsv;
+            } if (class_ == "1 --v" || class_ == "1--v") {
+                cc5();
+                goto statsv;
+            } if (class_ == "1 --v" || class_ == "1--v") {
+                cc6();
+                goto statsv;
+            } if (class_ == "1 --v" || class_ == "1--v") {
+                cc7();
+                goto statsv;
+            } if (class_ == "1 --v" || class_ == "1--v") {
+                cc8();
+                goto statsv;
+            } if (class_ != "1" || class_ != "2" || class_ != "3" 
+                  || class_ != "4" || class_ != "5" || class_ != "6"
+                  || class_ != "7" || class_ != "8")
+            {
+                Console.WriteLine("Outside of bounds. Please input a number between 1-8\n" +
+                                  "make sure there are no letters in the statement");
+            }
+            int classi = Int32.Parse(class_);
+            visAtt[0] = classi;
+            if (visAtt[0] <= 0 || visAtt[0] >= 8)
+            {
+                Console.WriteLine("Outside of bounds. Please input a number between 1-8");
+                goto rechoc;
+            }
+            class1A();
+        }
+
+        //Note: Ascii art can be 6 lines with 1 line for user inp.
+        //TODO make classes (2-8) and ascii art for all classes 
+        
+        /// <summary>
+        /// Class 1 art (6x30) [Human]
+        /// </summary>
+        public string[] c1a =
+        {
+            "1 This is the ascii art for cl 1",
+            "2 :)",
+            "3",
+            "4",
+            "5",
+            "6"
+        };
+        
+        /// <summary>
+        /// Class 2 art (6x30) [---]
+        /// </summary>
+        public string[] c2a =
+        {
+            "This is the ascii art for cl 2",
+            " :)"
+        };
+        
+        /// <summary>
+        /// Class 3 art (6x30) [---]
+        /// </summary>
+        public string[] c3a =
+        {
+            "This is the ascii art for cl 3",
+            " :)"
+        };
+        
+        /// <summary>
+        /// Class 4 art (6x30) [---]
+        /// </summary>
+        public string[] c4a =
+        {
+            "This is the ascii art for cl 4",
+            " :)"
+        };
+        
+        /// <summary>
+        /// Class 5 art (6x30) [---]
+        /// </summary>
+        public string[] c5a =
+        {
+            "This is the ascii art for cl 5",
+            " :)"
+        };
+        
+        /// <summary>
+        /// Class 6 art (6x30) [---]
+        /// </summary>
+        public string[] c6a =
+        {
+            "This is the ascii art for cl 6",
+            " :)"
+        };
+        
+        /// <summary>
+        /// Class 7 art (6x30) [---]
+        /// </summary>
+        public string[] c7a =
+        {
+            "This is the ascii art for cl 7",
+            " :)"
+        };
+        
+        /// <summary>
+        /// Class 8 art (6x30) [---]
+        /// </summary>
+        public string[] c8a =
+        {
+            "This is the ascii art for cl 8",
+            " :)"
+        };
+        
+        
+        /// <summary>
+        /// Shows the ascii art for the specific choice
+        /// </summary>
+        private void class1A()
+        {
+            switch (visAtt[0])
+            {
+                case 1:
+                    foreach (string element in c1a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    Thread.Sleep(2000);
+                    break;
+                case 2:
+                    foreach (string element in c2a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 3:
+                    foreach (string element in c3a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break; 
+                case 4:
+                    foreach (string element in c4a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break; 
+                case 5:
+                    foreach (string element in c5a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break; 
+                case 6:
+                    foreach (string element in c6a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break; 
+                case 7: 
+                    foreach (string element in c7a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break; 
+                case 8:
+                    foreach (string element in c8a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+            }
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the first class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc1()
+        {
+            
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the second class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc2()
+        {
+            
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the third class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc3()
+        {
+            
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the fourth class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc4()
+        {
+            
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the fifth class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc5()
+        {
+            
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the sixth class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc6()
+        {
+            
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the seventh class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc7()
+        {
+            
+        }
+        
+        /// <summary>
+        /// Shows an image (Ascii art) of the eighth class then the related stats
+        /// [Ascii art image 6x15]
+        /// </summary>
+        private void cc8()
+        {
+            
+        }
+        
     }
 }
