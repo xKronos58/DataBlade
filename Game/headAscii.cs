@@ -11,7 +11,7 @@ namespace Game
         {
             "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
             "|     |^_^|     | Head num  : 1 / Default",
-            "|     \\___/     |"
+            "|     \\___/     |",
         };
         
         /// <summary>
@@ -21,7 +21,7 @@ namespace Game
         {
             "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
             "|     |-_-|     | Head num  : 2",
-            "|     \\___/     |"
+            "|     \\___/     |",
         };
         
         /// <summary>
@@ -31,7 +31,7 @@ namespace Game
         {
             "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
             "|     |0_0|     | Head num  : 3",
-            "|     \\___/     |"
+            "|     \\___/     |",
         };
         
         /// <summary>
@@ -41,7 +41,7 @@ namespace Game
         {
             "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
             "|     |#-#|     | Head num  : 4",
-            "|     \\___/     |"
+            "|     \\___/     |",
         };
         
         /// <summary>
@@ -51,7 +51,7 @@ namespace Game
         {
             "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
             "|     |>-<|     | Head num  : 5",
-            "|     \\___/     |"
+            "|     \\___/     |",
         };
         
         /// <summary>
@@ -61,7 +61,7 @@ namespace Game
         {
             "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
             "|     |V-V|     | Head num  : 6",
-            "|     \\___/     |"
+            "|     \\___/     |",
         };
 
         /// <summary>
@@ -69,7 +69,6 @@ namespace Game
         /// </summary>
         public string[] LowerBody =
         {
-            "|      |  |    | Attribute : DMG (+ 10)",
             "|    __/  \\__   | Torso num : 1 / Default",
             "|   /         \\ |",
             "|   | |     | | | Attribute : Luck (+ 2)",
@@ -80,6 +79,28 @@ namespace Game
             "|     |  |  |   |",
             "|     (_) (_)   | Attribute : stamina (+ 20)",
             "|===============| Feet num : 1 / Default"
+        };
+
+        public string[] allHeads =
+        {
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |-_-|     | Head num  : 2",
+            "|     \\___/     |",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |0_0|     | Head num  : 3",
+            "|     \\___/     |",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |#-#|     | Head num  : 4",
+            "|     \\___/     |",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |>-<|     | Head num  : 5",
+            "|     \\___/     |",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |V-V|     | Head num  : 6",
+            "|     \\___/     |",
         };
     }
 }

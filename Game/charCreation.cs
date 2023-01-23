@@ -10,6 +10,7 @@ namespace Game
     {
         private CustomShowFunc show = new CustomShowFunc();
         private headAscii Head = new headAscii();
+        private torsoAscii Torso = new torsoAscii();
         
         public static string time = DateTime.Now.ToString("y.m.d.HH.mm.ss");
 
@@ -424,18 +425,19 @@ namespace Game
                 goto rechoc;
             }
             class1A();
+            torso();
         }
 
         //Note: Ascii art can be 6 lines with 1 line for user inp.
         //TODO make classes (2-8) and ascii art for all classes 
-        int headnum0 = 0;
-        int headnum1 = 0;
-        int headnum2 = 0;
-        int headnum3 = 0;
-        int headnum4 = 0;
-        int headnum5 = 0;
-        int headnum6 = 0;
-        int headnum7 = 0;
+        int headnum0 = 1;
+        int headnum1 = 1;
+        int headnum2 = 1;
+        int headnum3 = 1;
+        int headnum4 = 1;
+        int headnum5 = 1;
+        int headnum6 = 1;
+        int headnum7 = 1;
         /// <summary>
         /// Shows the ascii art for the specific choice
         /// </summary>
@@ -1841,5 +1843,314 @@ namespace Game
             "|===============| Feet num : 1 / Default   |"
         };
 
+        private int currentSpot = 1;
+        private int[] heads =
+        {
+            0,
+            0,
+            0
+        };
+        
+        /// <summary>
+        /// Stores visAtt vals but changed for things like allHeads[this.ch[1]]
+        /// </summary>
+        private int[] CH =
+        {
+            0,
+            0
+        };
+        
+        
+        /// <summary>
+        /// Writes the custom head using some multiplication rather than a switch() w/ class and visatt
+        /// </summary>
+        public void writeHeads()
+        {
+            //Used because it is minipulated and changed from visAtt
+            CH[0] = (int)this.visAtt[0];
+            CH[1] = (int)this.visAtt[1];
+            
+            heads[0] = CH[1] * 3 - 3; //heads[0] = (CH[1] * 3 - 3) * CH[0]; what it will look like when class imp happens
+            heads[1] = CH[1] * 3 - 2; //heads[0] = (CH[1] * 3 - 3) * CH[0];
+            heads[2] = CH[1] * 3 - 1; //heads[0] = (CH[1] * 3 - 3) * CH[0];
+
+            Console.WriteLine(this.Head.allHeads[this.heads[0]]);
+            Console.WriteLine(this.Head.allHeads[this.heads[1]]);
+            Console.WriteLine(this.Head.allHeads[this.heads[2]]);
+        }
+        
+        /// <summary>
+        /// Same as nextHead() changes between the next torso on call
+        /// </summary>
+        public void nextTorso()
+        {
+            currentSpot++;
+            //Stops current spot from going to 7+
+            if (currentSpot == 7)
+            {
+                currentSpot = 0;
+            }
+
+            int[] heads =
+            {
+                0,
+                0,
+                0
+            };
+
+            int[] CH =
+            {
+                (int)this.visAtt[0],
+                (int)this.visAtt[1]
+            };
+            
+            heads[0] = CH[1] * 3 - 3; //heads[0] = (CH[1] * 3 - 3) * CH[0]; what it will look like when class imp happens
+            heads[1] = CH[1] * 3 - 2; //heads[0] = (CH[1] * 3 - 3) * CH[0];
+            heads[2] = CH[1] * 3 - 1; //heads[0] = (CH[1] * 3 - 3) * CH[0];
+            
+            switch (currentSpot)
+            {
+                case 1:
+                    this.writeHeads();
+                    foreach (string element in this.Torso.torso1a)
+                    {
+                        Console.WriteLine(element);
+                    }
+
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 2:
+                    this.writeHeads();
+                    foreach (string element in this.Torso.torso2a)
+                    {
+                        Console.WriteLine(element);
+                    }
+
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 3:
+                    this.writeHeads();
+                    foreach (string element in this.Torso.torso3a)
+                    {
+                        Console.WriteLine(element);
+                    }
+
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 4:
+                    this.writeHeads();
+                    foreach (string element in this.Torso.torso4a)
+                    {
+                        Console.WriteLine(element);
+                    }
+
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 5:
+                    this.writeHeads();
+                    foreach (string element in this.Torso.torso5a)
+                    {
+                        Console.WriteLine(element);
+                    }
+
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 6:
+                    this.writeHeads();
+                    foreach (string element in this.Torso.torso6a)
+                    {
+                        Console.WriteLine(element);
+                    }
+
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Allows the player to customize the torso of thier charecter 
+        /// </summary>
+        public void torso()
+        {
+            
+            // Stores the Class and head num so everytime it needs to be accessed it does not
+            // need to be casted
+            int[] CH =
+            {
+                (int)visAtt[0],
+                (int)visAtt[1]
+            };
+            
+            //Keeps current position of the torso
+            int torsoPos = 0;
+            
+            //Used for which headnum should be accessed in the array
+            int[] heads =
+            {
+                0,
+                0,
+                0
+            };
+            
+            //Logic for printing heads (Stored in an array) 
+            // If the head selected is 4 CH[1] or the head num will be mult by 3 (Size of head
+            // in array) and then 3 is subtracted for the first one and so on
+            //TODO Impliment diffrend heads for diffrent class 
+            heads[0] = CH[1] * 3 - 3; //heads[0] = (CH[1] * 3 - 3) * CH[0]; what it will look like when class imp happens
+            heads[1] = CH[1] * 3 - 2; //heads[0] = (CH[1] * 3 - 3) * CH[0];
+            heads[2] = CH[1] * 3 - 1; //heads[0] = (CH[1] * 3 - 3) * CH[0];
+            Console.WriteLine("VisAtt[1] =" + visAtt[1]);
+            Console.WriteLine("CH[1] =" + CH[1]);
+            Console.WriteLine(heads[0] + "\n" + heads[1] + "\n" + heads[2]);
+
+            Console.WriteLine("Chose which torso you want. (type next for the next torso "+
+                              "or a num to skip then select to confirm)");
+            nxttc: ;
+            string torso = Console.ReadLine().ToLower();
+            switch (torso)
+            {
+                case "1":
+                    //Writes the selected head
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the selected torso (W/ default arms)
+                    foreach (string element in this.Torso.torso1a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Writes remaining lower body
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Says the the current torso is the first one 
+                    torsoPos = 1;
+                    goto nxttc;
+                case "2":
+                    //Writes the selected head
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the selected torso (W/ default arms)
+                    foreach (string element in this.Torso.torso2a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Writes remaining lower body
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Says the the current torso is the second one 
+                    torsoPos = 2;
+                    goto nxttc;
+                case "3":
+                    //Writes the selected head
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the selected torso (W/ default arms)
+                    foreach (string element in this.Torso.torso3a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Writes remaining lower body
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Says the the current torso is the third one 
+                    torsoPos = 3;
+                    goto nxttc;
+                case "4":      
+                    //Writes the selected head
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the selected torso (W/ default arms)
+                    foreach (string element in this.Torso.torso4a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Writes remaining lower body
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Says the the current torso is the fourth one 
+                    torsoPos = 4;
+                    goto nxttc;
+                case "5":
+                    //Writes the selected head
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the selected torso (W/ default arms)
+                    foreach (string element in this.Torso.torso5a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Writes remaining lower body
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Says the the current torso is the fifth one 
+                    torsoPos = 5;
+                    goto nxttc;
+                case "6":
+                    //Writes the selected head
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the selected torso (W/ default arms)
+                    foreach (string element in this.Torso.torso6a)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Writes remaining lower body
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Says the the current torso is the sixth one 
+                    torsoPos = 6;
+                    goto nxttc;
+                case "prev":
+                    //Decrements the torso pos by 1 
+                    torsoPos--;
+                    goto nxttc;
+                case "next":
+                    nextTorso();
+                    //Incriments
+                    torsoPos++;
+                    goto nxttc;
+                case "select":
+                    visAtt[2] = torsoPos;
+                    break;
+                default:
+                    Console.WriteLine("Unexpected action, please try again");
+                    goto nxttc;
+            }
+        }
     }
 }

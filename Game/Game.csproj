@@ -40,6 +40,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Arms.cs" />
         <Compile Include="cho15C14C.cs" />
         <Compile Include="attemptedCharConversion.cs" />
         <Compile Include="charCreation.cs" />
@@ -52,8 +53,10 @@
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="puzzle1Art.cs" />
+        <Compile Include="SelectCstm.cs" />
         <Compile Include="stats.cs" />
         <Compile Include="statsMultiplier.cs" />
+        <Compile Include="torsoAscii.cs" />
         <Compile Include="writeVars.cs" />
     </ItemGroup>
     <ItemGroup>

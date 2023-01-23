@@ -13,7 +13,7 @@ namespace Game
             0, // 3    Cyber damage bonus       |
             0, // 4    Stamina                  |   
             0, // 5    Speed                    |
-            0 // 6    Luck                     | -- Excluded in mult
+            0  // 6    Luck                     | -- Excluded in mult
         };
 
         private readonly CharCreation c = new CharCreation();
