@@ -1,6 +1,6 @@
 namespace Game
 {
-    public class Arms
+    public class ArmsAscii
     {
         public string[] lArm1 =
         {
@@ -23,9 +23,9 @@ namespace Game
 
         public string[] rArm1h =
         {
-            " |  |",
-            " |  |",
-            "VVV  |"
+            " | | Arms: 1",
+            " | |",
+            "VVV |"
         };
         
         public string[] lArm2 =
@@ -49,9 +49,9 @@ namespace Game
 
         public string[] rArm2h =
         {
-            "X|  |",
-            " |  |",
-            "VVV  |"
+            "X| | Arms: 2",
+            " | |",
+            "VVV |"
         };
         
         public string[] lArm3 =
@@ -75,9 +75,9 @@ namespace Game
 
         public string[] rArm3h =
         {
-            " |  |",
-            "X|  |",
-            "VVV  |"
+            " | | Arms: 3",
+            "X| |",
+            "VVV |"
         };
         
         public string[] lArm4 =
@@ -101,9 +101,9 @@ namespace Game
 
         public string[] rArm4h =
         {
-            " |  |",
-            "X|  |",
-            "VVV  |"
+            " | | Arms: 4",
+            "X| |",
+            "VVV |"
         };
         
         public string[] lArm5 =
@@ -127,9 +127,9 @@ namespace Game
 
         public string[] rArm5h =
         {
-            "X|  |",
-            " |  |",
-            "VVV  |"
+            "X| | Arms: 5",
+            " | |",
+            "VVV |"
         };
         
         public string[] lArm6 =
@@ -153,9 +153,9 @@ namespace Game
 
         public string[] rArm6h =
         {
-            "X|  |",
-            "X|  |",
-            "VVV  |"
+            "X| | Arms: 6",
+            "X| |",
+            "VVV |"
         };
     }
 }

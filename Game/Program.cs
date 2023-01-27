@@ -13,6 +13,8 @@ namespace Game
             var ls = new stats();
             var ch = new cho15C14C();
             var mb = new mazeBuilder();
+            var ta = new torsoAscii();
+            var gp = new GamePlay();
 
 
             //Player stats
@@ -47,6 +49,14 @@ namespace Game
             {
                 case "rand":
                     cha.randomChar();
+                    break;
+                case "arlo:d":
+                    foreach (string element in ta.arlosChar)
+                    {
+                        Console.WriteLine(element);
+                    }
+
+                    string pause = Console.ReadLine();
                     break;
                 case "prsts":
                     cha.presetChar();
@@ -86,9 +96,8 @@ namespace Game
 
             clearTimer();
 
-            art.firstCutScene();
+            gp.Game();
             pz1: ;
-            ch.c1_5_4();
         }
     }
 }

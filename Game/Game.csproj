@@ -40,13 +40,14 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Arms.cs" />
+        <Compile Include="ArmsAscii.cs" />
         <Compile Include="cho15C14C.cs" />
         <Compile Include="attemptedCharConversion.cs" />
         <Compile Include="charCreation.cs" />
         <Compile Include="CharPresets.cs" />
         <Compile Include="CNSLart.cs" />
         <Compile Include="CustomShowFunc.cs" />
+        <Compile Include="GamePlay.cs" />
         <Compile Include="headAscii.cs" />
         <Compile Include="LoadFunc.cs" />
         <Compile Include="mazeBuilder.cs" />
@@ -57,6 +58,7 @@
         <Compile Include="stats.cs" />
         <Compile Include="statsMultiplier.cs" />
         <Compile Include="torsoAscii.cs" />
+        <Compile Include="Vector2Script.cs" />
         <Compile Include="writeVars.cs" />
     </ItemGroup>
     <ItemGroup>

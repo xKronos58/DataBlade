@@ -1,0 +1,5 @@
+mov up, acc
+add acc
+mov acc, down
+mov up, acc
+end;j

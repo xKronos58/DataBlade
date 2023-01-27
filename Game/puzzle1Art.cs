@@ -1,8 +1,8 @@
 using System;
-using System.Collections.Specialized;
 
 namespace Game
 {
+    
     public class puzzle1Art
     {
         public int wallTile = 1;
@@ -367,7 +367,7 @@ namespace Game
             } else if (
                 playerX == 8 && playerY == 1 
             )
-            {
+            {  
                 canMoveYP = false;  //S
             }
             
@@ -548,7 +548,7 @@ namespace Game
         void posM2Checker()
         {
             //Gets obstacles / objs
-            
+
             // if ()
         }
     }

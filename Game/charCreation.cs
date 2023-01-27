@@ -11,12 +11,364 @@ namespace Game
         private CustomShowFunc show = new CustomShowFunc();
         private headAscii Head = new headAscii();
         private torsoAscii Torso = new torsoAscii();
+        private ArmsAscii Arms = new ArmsAscii();
         
         public static string time = DateTime.Now.ToString("y.m.d.HH.mm.ss");
 
         private string cla;
 
         public byte Class;
+        
+                /// <summary>
+        /// Class 1 art (6x30) [Human]
+        /// </summary>
+        public string[] c1a =
+        {
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
+        };
+        
+        /// <summary>
+        /// Class 2 art (6x30) [---]
+        /// </summary>
+        public string[] c2a =
+        {
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
+        };
+        
+        /// <summary>
+        /// Class 3 art (6x30) [---]
+        /// </summary>
+        public string[] c3a =
+        {
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
+        };
+        
+        /// <summary>
+        /// Class 4 art (6x30) [---]
+        /// </summary>
+        public string[] c4a =
+        {
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
+        };
+        
+        /// <summary>
+        /// Class 5 art (6x30) [---]
+        /// </summary>
+        public string[] c5a =
+        {
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
+        };
+        
+        /// <summary>
+        /// Class 6 art (6x30) [---]
+        /// </summary>
+        public string[] c6a =
+        {
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
+        };
+        
+        /// <summary>
+        /// Class 7 art (6x30) [---]
+        /// </summary>
+        public string[] c7a =
+        {
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
+        };
+        
+        /// <summary>
+        /// Class 8 art (6x30) [---]
+        /// </summary>
+        public string[] c8a =
+        {
+            "|===============|",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
+            "|     |^_^|     | Head num  : 1 / Default",
+            "|     \\___/     |",
+            "|      |  |     | Attribute : DMG (+ 10)",
+            "|    __/  \\__   | Torso num : 1 / Default",
+            "|   /         \\ |",
+            "|   | |     | | | Attribute : Luck (+ 2)",
+            "|   | |     | | | Arms num : 1 / Default",
+            "|   VVV_____VVV |",
+            "|     |     |   | Attribute : speed (+ 5)",
+            "|     |  |  |   | Legs num : 1 / Default",
+            "|     |  |  |   |",
+            "|     (_) (_)   | Attribute : stamina (+ 20)",
+            "|===============| Feet num : 1 / Default"
+        };
+        
+        /// <summary>
+        /// Class 1 art (6x15) [Human] + Stats for cc1
+        /// </summary>
+        public string[] cc1a =
+        {
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
+        };
+        
+        /// <summary>
+        /// Class 2 art (6x15) [---] + Stats for cc2
+        /// </summary>
+        public string[] cc2a =
+        {
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
+        };
+        
+        /// <summary>
+        /// Class 3 art (6x15) [---] + Stats for cc3
+        /// </summary>
+        public string[] cc3a =
+        {
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
+        };
+        
+        /// <summary>
+        /// Class 4 art (6x15) [---] + Stats for cc4
+        /// </summary>
+        public string[] cc4a =
+        {
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
+        };
+        
+        /// <summary>
+        /// Class 5 art (6x15) [---] + Stats for cc5
+        /// </summary>
+        public string[] cc5a =
+        {
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
+        };
+        
+        /// <summary>
+        /// Class 6 art (6x15) [---] + Stats for cc6
+        /// </summary>
+        public string[] cc6a =
+        {
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
+        };
+        
+        /// <summary>
+        /// Class 7 art (6x15) [---] + Stats for cc7
+        /// </summary>
+        public string[] cc7a =
+        {
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
+        };
+        
+        /// <summary>
+        /// Class 8 art (6x15) [---] + Stats for cc8
+        /// </summary>
+        public string[] cc8a =
+        {
+            "|===============|                          | class att: + 10 hp",
+            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
+            "|     |^_^|     | Head num  : 1 / Default  |",
+            "|     \\___/     |                          |",
+            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
+            "|    __/  \\__   | Torso num : 1 / Default  |",
+            "|   /         \\ |                          |",
+            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
+            "|   | |     | | | Arms num : 1 / Default   |",
+            "|   VVV_____VVV |                          |",
+            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
+            "|     |  |  |   | Legs num : 1 / Default   |",
+            "|     |  |  |   |                          |",
+            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
+            "|===============| Feet num : 1 / Default   |"
+        };
 
         public string[] Class1 /* Regular */ =
         {
@@ -426,6 +778,7 @@ namespace Game
             }
             class1A();
             torso();
+            arms();
         }
 
         //Note: Ascii art can be 6 lines with 1 line for user inp.
@@ -1252,7 +1605,7 @@ namespace Game
                     }
                     //Choosing the head of the player
                     Console.WriteLine("Chose which head you want. (type next for the next head "+
-                                "or a num to skip then select to confirm)");
+                                      "or a num to skip then select to confirm)");
                     nxtxh7: ;
                     string Head7 = Console.ReadLine().ToLower();
                     switch (Head7)
@@ -1490,358 +1843,6 @@ namespace Game
             string ccvo = Console.ReadLine();
             Console.Clear();
         }
-        
-        /// <summary>
-        /// Class 1 art (6x30) [Human]
-        /// </summary>
-        public string[] c1a =
-        {
-            "|===============|",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
-            "|     |^_^|     | Head num  : 1 / Default",
-            "|     \\___/     |",
-            "|      |  |     | Attribute : DMG (+ 10)",
-            "|    __/  \\__   | Torso num : 1 / Default",
-            "|   /         \\ |",
-            "|   | |     | | | Attribute : Luck (+ 2)",
-            "|   | |     | | | Arms num : 1 / Default",
-            "|   VVV_____VVV |",
-            "|     |     |   | Attribute : speed (+ 5)",
-            "|     |  |  |   | Legs num : 1 / Default",
-            "|     |  |  |   |",
-            "|     (_) (_)   | Attribute : stamina (+ 20)",
-            "|===============| Feet num : 1 / Default"
-        };
-        
-        /// <summary>
-        /// Class 2 art (6x30) [---]
-        /// </summary>
-        public string[] c2a =
-        {
-            "|===============|",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
-            "|     |^_^|     | Head num  : 1 / Default",
-            "|     \\___/     |",
-            "|      |  |     | Attribute : DMG (+ 10)",
-            "|    __/  \\__   | Torso num : 1 / Default",
-            "|   /         \\ |",
-            "|   | |     | | | Attribute : Luck (+ 2)",
-            "|   | |     | | | Arms num : 1 / Default",
-            "|   VVV_____VVV |",
-            "|     |     |   | Attribute : speed (+ 5)",
-            "|     |  |  |   | Legs num : 1 / Default",
-            "|     |  |  |   |",
-            "|     (_) (_)   | Attribute : stamina (+ 20)",
-            "|===============| Feet num : 1 / Default"
-        };
-        
-        /// <summary>
-        /// Class 3 art (6x30) [---]
-        /// </summary>
-        public string[] c3a =
-        {
-            "|===============|",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
-            "|     |^_^|     | Head num  : 1 / Default",
-            "|     \\___/     |",
-            "|      |  |     | Attribute : DMG (+ 10)",
-            "|    __/  \\__   | Torso num : 1 / Default",
-            "|   /         \\ |",
-            "|   | |     | | | Attribute : Luck (+ 2)",
-            "|   | |     | | | Arms num : 1 / Default",
-            "|   VVV_____VVV |",
-            "|     |     |   | Attribute : speed (+ 5)",
-            "|     |  |  |   | Legs num : 1 / Default",
-            "|     |  |  |   |",
-            "|     (_) (_)   | Attribute : stamina (+ 20)",
-            "|===============| Feet num : 1 / Default"
-        };
-        
-        /// <summary>
-        /// Class 4 art (6x30) [---]
-        /// </summary>
-        public string[] c4a =
-        {
-            "|===============|",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
-            "|     |^_^|     | Head num  : 1 / Default",
-            "|     \\___/     |",
-            "|      |  |     | Attribute : DMG (+ 10)",
-            "|    __/  \\__   | Torso num : 1 / Default",
-            "|   /         \\ |",
-            "|   | |     | | | Attribute : Luck (+ 2)",
-            "|   | |     | | | Arms num : 1 / Default",
-            "|   VVV_____VVV |",
-            "|     |     |   | Attribute : speed (+ 5)",
-            "|     |  |  |   | Legs num : 1 / Default",
-            "|     |  |  |   |",
-            "|     (_) (_)   | Attribute : stamina (+ 20)",
-            "|===============| Feet num : 1 / Default"
-        };
-        
-        /// <summary>
-        /// Class 5 art (6x30) [---]
-        /// </summary>
-        public string[] c5a =
-        {
-            "|===============|",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
-            "|     |^_^|     | Head num  : 1 / Default",
-            "|     \\___/     |",
-            "|      |  |     | Attribute : DMG (+ 10)",
-            "|    __/  \\__   | Torso num : 1 / Default",
-            "|   /         \\ |",
-            "|   | |     | | | Attribute : Luck (+ 2)",
-            "|   | |     | | | Arms num : 1 / Default",
-            "|   VVV_____VVV |",
-            "|     |     |   | Attribute : speed (+ 5)",
-            "|     |  |  |   | Legs num : 1 / Default",
-            "|     |  |  |   |",
-            "|     (_) (_)   | Attribute : stamina (+ 20)",
-            "|===============| Feet num : 1 / Default"
-        };
-        
-        /// <summary>
-        /// Class 6 art (6x30) [---]
-        /// </summary>
-        public string[] c6a =
-        {
-            "|===============|",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
-            "|     |^_^|     | Head num  : 1 / Default",
-            "|     \\___/     |",
-            "|      |  |     | Attribute : DMG (+ 10)",
-            "|    __/  \\__   | Torso num : 1 / Default",
-            "|   /         \\ |",
-            "|   | |     | | | Attribute : Luck (+ 2)",
-            "|   | |     | | | Arms num : 1 / Default",
-            "|   VVV_____VVV |",
-            "|     |     |   | Attribute : speed (+ 5)",
-            "|     |  |  |   | Legs num : 1 / Default",
-            "|     |  |  |   |",
-            "|     (_) (_)   | Attribute : stamina (+ 20)",
-            "|===============| Feet num : 1 / Default"
-        };
-        
-        /// <summary>
-        /// Class 7 art (6x30) [---]
-        /// </summary>
-        public string[] c7a =
-        {
-            "|===============|",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
-            "|     |^_^|     | Head num  : 1 / Default",
-            "|     \\___/     |",
-            "|      |  |     | Attribute : DMG (+ 10)",
-            "|    __/  \\__   | Torso num : 1 / Default",
-            "|   /         \\ |",
-            "|   | |     | | | Attribute : Luck (+ 2)",
-            "|   | |     | | | Arms num : 1 / Default",
-            "|   VVV_____VVV |",
-            "|     |     |   | Attribute : speed (+ 5)",
-            "|     |  |  |   | Legs num : 1 / Default",
-            "|     |  |  |   |",
-            "|     (_) (_)   | Attribute : stamina (+ 20)",
-            "|===============| Feet num : 1 / Default"
-        };
-        
-        /// <summary>
-        /// Class 8 art (6x30) [---]
-        /// </summary>
-        public string[] c8a =
-        {
-            "|===============|",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) ",
-            "|     |^_^|     | Head num  : 1 / Default",
-            "|     \\___/     |",
-            "|      |  |     | Attribute : DMG (+ 10)",
-            "|    __/  \\__   | Torso num : 1 / Default",
-            "|   /         \\ |",
-            "|   | |     | | | Attribute : Luck (+ 2)",
-            "|   | |     | | | Arms num : 1 / Default",
-            "|   VVV_____VVV |",
-            "|     |     |   | Attribute : speed (+ 5)",
-            "|     |  |  |   | Legs num : 1 / Default",
-            "|     |  |  |   |",
-            "|     (_) (_)   | Attribute : stamina (+ 20)",
-            "|===============| Feet num : 1 / Default"
-        };
-        
-        /// <summary>
-        /// Class 1 art (6x15) [Human] + Stats for cc1
-        /// </summary>
-        public string[] cc1a =
-        {
-            "|===============|                          | class att: + 10 hp",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
-            "|     |^_^|     | Head num  : 1 / Default  |",
-            "|     \\___/     |                          |",
-            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
-            "|    __/  \\__   | Torso num : 1 / Default  |",
-            "|   /         \\ |                          |",
-            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
-            "|   | |     | | | Arms num : 1 / Default   |",
-            "|   VVV_____VVV |                          |",
-            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
-            "|     |  |  |   | Legs num : 1 / Default   |",
-            "|     |  |  |   |                          |",
-            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
-            "|===============| Feet num : 1 / Default   |"
-        };
-        
-        /// <summary>
-        /// Class 2 art (6x15) [---] + Stats for cc2
-        /// </summary>
-        public string[] cc2a =
-        {
-            "|===============|                          | class att: + 10 hp",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
-            "|     |^_^|     | Head num  : 1 / Default  |",
-            "|     \\___/     |                          |",
-            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
-            "|    __/  \\__   | Torso num : 1 / Default  |",
-            "|   /         \\ |                          |",
-            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
-            "|   | |     | | | Arms num : 1 / Default   |",
-            "|   VVV_____VVV |                          |",
-            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
-            "|     |  |  |   | Legs num : 1 / Default   |",
-            "|     |  |  |   |                          |",
-            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
-            "|===============| Feet num : 1 / Default   |"
-        };
-        
-        /// <summary>
-        /// Class 3 art (6x15) [---] + Stats for cc3
-        /// </summary>
-        public string[] cc3a =
-        {
-            "|===============|                          | class att: + 10 hp",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
-            "|     |^_^|     | Head num  : 1 / Default  |",
-            "|     \\___/     |                          |",
-            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
-            "|    __/  \\__   | Torso num : 1 / Default  |",
-            "|   /         \\ |                          |",
-            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
-            "|   | |     | | | Arms num : 1 / Default   |",
-            "|   VVV_____VVV |                          |",
-            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
-            "|     |  |  |   | Legs num : 1 / Default   |",
-            "|     |  |  |   |                          |",
-            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
-            "|===============| Feet num : 1 / Default   |"
-        };
-        
-        /// <summary>
-        /// Class 4 art (6x15) [---] + Stats for cc4
-        /// </summary>
-        public string[] cc4a =
-        {
-            "|===============|                          | class att: + 10 hp",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
-            "|     |^_^|     | Head num  : 1 / Default  |",
-            "|     \\___/     |                          |",
-            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
-            "|    __/  \\__   | Torso num : 1 / Default  |",
-            "|   /         \\ |                          |",
-            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
-            "|   | |     | | | Arms num : 1 / Default   |",
-            "|   VVV_____VVV |                          |",
-            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
-            "|     |  |  |   | Legs num : 1 / Default   |",
-            "|     |  |  |   |                          |",
-            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
-            "|===============| Feet num : 1 / Default   |"
-        };
-        
-        /// <summary>
-        /// Class 5 art (6x15) [---] + Stats for cc5
-        /// </summary>
-        public string[] cc5a =
-        {
-            "|===============|                          | class att: + 10 hp",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
-            "|     |^_^|     | Head num  : 1 / Default  |",
-            "|     \\___/     |                          |",
-            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
-            "|    __/  \\__   | Torso num : 1 / Default  |",
-            "|   /         \\ |                          |",
-            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
-            "|   | |     | | | Arms num : 1 / Default   |",
-            "|   VVV_____VVV |                          |",
-            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
-            "|     |  |  |   | Legs num : 1 / Default   |",
-            "|     |  |  |   |                          |",
-            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
-            "|===============| Feet num : 1 / Default   |"
-        };
-        
-        /// <summary>
-        /// Class 6 art (6x15) [---] + Stats for cc6
-        /// </summary>
-        public string[] cc6a =
-        {
-            "|===============|                          | class att: + 10 hp",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
-            "|     |^_^|     | Head num  : 1 / Default  |",
-            "|     \\___/     |                          |",
-            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
-            "|    __/  \\__   | Torso num : 1 / Default  |",
-            "|   /         \\ |                          |",
-            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
-            "|   | |     | | | Arms num : 1 / Default   |",
-            "|   VVV_____VVV |                          |",
-            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
-            "|     |  |  |   | Legs num : 1 / Default   |",
-            "|     |  |  |   |                          |",
-            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
-            "|===============| Feet num : 1 / Default   |"
-        };
-        
-        /// <summary>
-        /// Class 7 art (6x15) [---] + Stats for cc7
-        /// </summary>
-        public string[] cc7a =
-        {
-            "|===============|                          | class att: + 10 hp",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
-            "|     |^_^|     | Head num  : 1 / Default  |",
-            "|     \\___/     |                          |",
-            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
-            "|    __/  \\__   | Torso num : 1 / Default  |",
-            "|   /         \\ |                          |",
-            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
-            "|   | |     | | | Arms num : 1 / Default   |",
-            "|   VVV_____VVV |                          |",
-            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
-            "|     |  |  |   | Legs num : 1 / Default   |",
-            "|     |  |  |   |                          |",
-            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
-            "|===============| Feet num : 1 / Default   |"
-        };
-        
-        /// <summary>
-        /// Class 8 art (6x15) [---] + Stats for cc8
-        /// </summary>
-        public string[] cc8a =
-        {
-            "|===============|                          | class att: + 10 hp",
-            "|     /‾‾‾\\     | Attribute : Max hp (+ 5) | 1 = hp 5, ect",
-            "|     |^_^|     | Head num  : 1 / Default  |",
-            "|     \\___/     |                          |",
-            "|      |  |     | Attribute : DMG (+ 10)   | 1 = dmg 10, ect",
-            "|    __/  \\__   | Torso num : 1 / Default  |",
-            "|   /         \\ |                          |",
-            "|   | |     | | | Attribute : Luck (+ 2)   | 1 = luck 2, ect",
-            "|   | |     | | | Arms num : 1 / Default   |",
-            "|   VVV_____VVV |                          |",
-            "|     |     |   | Attribute : speed (+ 5)  | 1 = speed 5, ect",
-            "|     |  |  |   | Legs num : 1 / Default   |",
-            "|     |  |  |   |                          |",
-            "|     (_) (_)   | Attribute : stamina (+20)| 1 = stamina 20, ect",
-            "|===============| Feet num : 1 / Default   |"
-        };
 
         private int currentSpot = 1;
         private int[] heads =
@@ -1879,11 +1880,15 @@ namespace Game
             Console.WriteLine(this.Head.allHeads[this.heads[2]]);
         }
         
+        //Keeps current position of the torso
+        int torsoPos = 0;
+        
         /// <summary>
         /// Same as nextHead() changes between the next torso on call
         /// </summary>
         public void nextTorso()
         {
+            currentSpot = torsoPos; 
             currentSpot++;
             //Stops current spot from going to 7+
             if (currentSpot == 7)
@@ -1991,17 +1996,13 @@ namespace Game
         public void torso()
         {
             
-            // Stores the Class and head num so everytime it needs to be accessed it does not
-            // need to be casted
+            // Allows the visAtt to be minipulated
             int[] CH =
             {
                 (int)visAtt[0],
                 (int)visAtt[1]
             };
-            
-            //Keeps current position of the torso
-            int torsoPos = 0;
-            
+
             //Used for which headnum should be accessed in the array
             int[] heads =
             {
@@ -2017,14 +2018,12 @@ namespace Game
             heads[0] = CH[1] * 3 - 3; //heads[0] = (CH[1] * 3 - 3) * CH[0]; what it will look like when class imp happens
             heads[1] = CH[1] * 3 - 2; //heads[0] = (CH[1] * 3 - 3) * CH[0];
             heads[2] = CH[1] * 3 - 1; //heads[0] = (CH[1] * 3 - 3) * CH[0];
-            Console.WriteLine("VisAtt[1] =" + visAtt[1]);
-            Console.WriteLine("CH[1] =" + CH[1]);
-            Console.WriteLine(heads[0] + "\n" + heads[1] + "\n" + heads[2]);
 
             Console.WriteLine("Chose which torso you want. (type next for the next torso "+
                               "or a num to skip then select to confirm)");
             nxttc: ;
             string torso = Console.ReadLine().ToLower();
+            Console.Clear();
             switch (torso)
             {
                 case "1":
@@ -2150,6 +2149,430 @@ namespace Game
                 default:
                     Console.WriteLine("Unexpected action, please try again");
                     goto nxttc;
+            }
+        }
+        //Stores the current position of the arms =
+        int armsPos = 1;
+        
+        int nexarmpos = 1;
+        public void nextArm()
+        {
+            //Allows visAtt[] to be minipulated
+            int[] CH =
+            {
+                (int)visAtt[0],
+                (int)visAtt[1],
+                (int)visAtt[2]
+            };
+            
+            //Stores the current position of the arms =
+            int armsPos = 1;
+            
+            //Used to store head logic
+            int[] heads =
+            {
+                0,
+                0,
+                0
+            };
+
+            int[] torsos =
+            {
+                0,
+                0,
+                0,
+                0,
+                0
+            };
+            
+            //Logic for printing heads (Stored in an array) 
+            // If the head selected is 4 CH[1] or the head num will be mult by 3 (Size of head
+            // in array) and then 3 is subtracted for the first one and so on
+            heads[0] = CH[1] * 3 - 3; //heads[0] = (CH[1] * 3 - 3) * CH[0]; what it will look like when class imp happens
+            heads[1] = CH[1] * 3 - 2; //heads[0] = (CH[1] * 3 - 3) * CH[0];
+            heads[2] = CH[1] * 3 - 1; //heads[0] = (CH[1] * 3 - 3) * CH[0];
+            
+            //Stores which torso is selected
+            torsos[0] = CH[2] * 5 - 5;
+            torsos[1] = CH[2] * 5 - 4;
+            torsos[2] = CH[2] * 5 - 3;
+            torsos[3] = CH[2] * 5 - 2;
+            torsos[4] = CH[2] * 5 - 1;
+
+            // nexarmpos = armsPos + 1;
+            nexarmpos++;
+            if (nexarmpos == 7)
+            {
+                nexarmpos = 1;
+            }
+            
+            switch (nexarmpos)
+            {
+                case 1:
+                    nexarmpos = 1;
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm1h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm1h[0]);
+                    Console.WriteLine(this.Arms.lArm1h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm1h[1]);
+                    Console.WriteLine(this.Arms.lArm1h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm1h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 2:
+                    nexarmpos = 2;
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm2h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm2h[0]);
+                    Console.WriteLine(this.Arms.lArm2h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm2h[1]);
+                    Console.WriteLine(this.Arms.lArm2h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm2h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 3:
+                    nexarmpos = 3;
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm3h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm3h[0]);
+                    Console.WriteLine(this.Arms.lArm3h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm3h[1]);
+                    Console.WriteLine(this.Arms.lArm3h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm3h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 4:
+                    nexarmpos = 4;
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm4h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm4h[0]);
+                    Console.WriteLine(this.Arms.lArm4h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm4h[1]);
+                    Console.WriteLine(this.Arms.lArm4h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm4h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 5:
+                    nexarmpos = 5;
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm5h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm5h[0]);
+                    Console.WriteLine(this.Arms.lArm5h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm5h[1]);
+                    Console.WriteLine(this.Arms.lArm5h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm5h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+                case 6:
+                    nexarmpos = 6;
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm6h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm6h[0]);
+                    Console.WriteLine(this.Arms.lArm6h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm6h[1]);
+                    Console.WriteLine(this.Arms.lArm6h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm6h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    break;
+            }
+        }
+        
+        /// <summary>
+        /// Allows the player to change which arms are selected
+        /// </summary>
+        public void arms()
+        {
+            
+            //Allows visAtt[] to be minipulated
+            int[] CH =
+            {
+                (int)visAtt[0],
+                (int)visAtt[1],
+                (int)visAtt[2]
+            };
+
+            //Used to store head logic
+            int[] heads =
+            {
+                0,
+                0,
+                0
+            };
+
+            int[] torsos =
+            {
+                0,
+                0,
+                0,
+                0,
+                0
+            };
+            
+            //Logic for printing heads (Stored in an array) 
+            // If the head selected is 4 CH[1] or the head num will be mult by 3 (Size of head
+            // in array) and then 3 is subtracted for the first one and so on
+            heads[0] = CH[1] * 3 - 3; //heads[0] = (CH[1] * 3 - 3) * CH[0]; what it will look like when class imp happens
+            heads[1] = CH[1] * 3 - 2; //heads[0] = (CH[1] * 3 - 3) * CH[0];
+            heads[2] = CH[1] * 3 - 1; //heads[0] = (CH[1] * 3 - 3) * CH[0];
+            
+            //Stores which torso is selected
+            torsos[0] = CH[2] * 5 - 5;
+            torsos[1] = CH[2] * 5 - 4;
+            torsos[2] = CH[2] * 5 - 3;
+            torsos[3] = CH[2] * 5 - 2;
+            torsos[4] = CH[2] * 5 - 1;
+            
+            Console.WriteLine("type which num arms or \"next\" or \"prev\" " +
+                              "and use \"select\" to choose");
+            nxtcha: ;
+            
+            string armSel = Console.ReadLine().ToLower();
+            Console.Clear();
+            switch (armSel)
+            {
+                case "1":
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm1h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm1h[0]);
+                    Console.WriteLine(this.Arms.lArm1h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm1h[1]);
+                    Console.WriteLine(this.Arms.lArm1h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm1h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Stores position of the arm
+                    armsPos = 1;
+                    goto nxtcha;
+                case "2":
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm2h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm2h[0]);
+                    Console.WriteLine(this.Arms.lArm2h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm2h[1]);
+                    Console.WriteLine(this.Arms.lArm2h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm2h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Stores position of the arm
+                    armsPos = 2;
+                    goto nxtcha;
+                case "3":
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm3h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm3h[0]);
+                    Console.WriteLine(this.Arms.lArm3h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm3h[1]);
+                    Console.WriteLine(this.Arms.lArm3h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm3h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Stores position of the arm
+                    armsPos = 3;
+                    goto nxtcha;
+                case "4":
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm4h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm4h[0]);
+                    Console.WriteLine(this.Arms.lArm4h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm4h[1]);
+                    Console.WriteLine(this.Arms.lArm4h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm4h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Stores position of the arm
+                    armsPos = 4;
+                    goto nxtcha;
+                case "5":
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm5h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm5h[0]);
+                    Console.WriteLine(this.Arms.lArm5h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm5h[1]);
+                    Console.WriteLine(this.Arms.lArm5h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm5h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Stores position of the arm
+                    armsPos = 5;
+                    goto nxtcha;
+                case "6":
+                    //Writes the head to the console
+                    Console.WriteLine(this.Head.allHeads[heads[0]]);
+                    Console.WriteLine(this.Head.allHeads[heads[1]]);
+                    Console.WriteLine(this.Head.allHeads[heads[2]]);
+                    //Writes the torso to the console w/o arms and hands
+                    Console.WriteLine(this.Torso.allTorsos[torsos[0]]);
+                    Console.WriteLine(this.Torso.allTorsos[torsos[1]]);
+                    Console.WriteLine(this.Arms.lArm6h[0]
+                                      + this.Torso.allTorsos[torsos[2]]
+                                      + this.Arms.rArm6h[0]);
+                    Console.WriteLine(this.Arms.lArm6h[1]
+                                      + this.Torso.allTorsos[torsos[3]]
+                                      + this.Arms.rArm6h[1]);
+                    Console.WriteLine(this.Arms.lArm6h[2]
+                                      + this.Torso.allTorsos[torsos[4]]
+                                      + this.Arms.rArm6h[2]);
+                    //Writes lowerbody
+                    foreach (string element in this.Torso.lowerBody)
+                    {
+                        Console.WriteLine(element);
+                    }
+                    //Stores position of the arm
+                    armsPos = 6;
+                    goto nxtcha;
+                case "next":
+                    nextArm();
+                    currentSpot++;
+                    goto nxtcha;
+                case "prev":
+                    currentSpot -=2;
+                    nextArm();
+                    currentSpot--;
+                    goto nxtcha;
+                case "select":
+                    visAtt[3] = armsPos;
+                    break;
+                default:
+                    Console.WriteLine("Unexpected arg pelease try again");
+                    goto nxtcha;
             }
         }
     }

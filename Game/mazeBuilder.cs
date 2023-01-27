@@ -1,6 +1,32 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Xml;
+/* #
+             * #  ┏   -   -   -   -   -   -   -   -   ┓
+             * #  |   .   .   .   .   .   .   .   .   |
+             * #  |   .   .   .   .   .   .   .   .   |
+             * #  |   .   .   .   .   .   .   .   .   |
+             * #  |   .   .   .   .   .   .   .   .   |
+             * #  |   .   .   .   .   .   .   .   .   |
+             * #  |   .   .   .   .   .   .   .   .   |
+             * #  |   .   .   .   .   .   .   .   .   |
+             * #  |   .   .   .   .   .   .   .   .   |
+             * #  ┗   -   -   -   -   -   -   -   -   ┛
+             * #
+             * #  --KEY--
+             * #  Grid size 10 x 10
+             * #  "." = movable space
+             * #  "|" = 
+             * #  "┓" = 
+             * #  "┛" = 
+             * #  "┏" = 
+             * #  "┗" = 
+             * #  "-" = wall
+             * #  -- Leave a "TAB" or "   " space in-between each element on the x axis
+             * #  -- Use "#" to save as a comment in the maze.txt file.
+             */
+
+
 
 namespace Game
 {
