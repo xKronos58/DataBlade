@@ -263,6 +263,7 @@ namespace Game
 
             //resizes the board for the new board size.
             board = new int[(int)BoardSize.x, (int)BoardSize.y];
+            boardAscii = new string[(int)BoardSize.x + 1, (int)BoardSize.y + 1];
             board[(int)spikes.x, (int)spikes.y] = 6;
             board[(int)key1.x -1, (int)key1.y -1] = 7;
             board[(int)_playerPos.x -1, (int)_playerPos.y -1] = 2;
@@ -362,8 +363,8 @@ namespace Game
                         o2--;
                     }
                     
-                    boardAscii[(int)BoardSize.x + 1, (int)BoardSize.y] = 
-                        "Dodge ^^ as they are spikes, make sure to collect the key! (--k)"; 
+                    boardAscii[(int)BoardSize.x - 1, (int)BoardSize.y] = 
+                        "||| Dodge ^^ as they are spikes, make sure to collect the key! (--k)"; 
                     
                     o2 = (int)BoardSize.y -1;
                     o--;
