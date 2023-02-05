@@ -322,7 +322,10 @@ namespace Game
                     Console.Clear();
                     _playerPos.x += 1;
                 }
-
+                
+                //ReWrites the player
+                board[(int)_playerPos.x, (int)_playerPos.y] = 2;
+                
                 Console.Clear();
 
                 //Writes what is happening on the board to the string of Board[].
@@ -378,17 +381,22 @@ namespace Game
                 int asd = 0;
                 foreach (string a in boardAscii)
                 {
-                    Console.WriteLine(boardAscii[0, asd] + boardAscii[1, asd] + 
-                                      boardAscii[2, asd] + boardAscii[3, asd] + 
-                                      boardAscii[4, asd] + boardAscii[5, asd] + 
-                                      boardAscii[6, asd] + boardAscii[7, asd] + 
-                                      boardAscii[8, asd] + boardAscii[9, asd]);
-                    if (asd == board.Length)
+                    if (asd == 8)
                     {
                         break;
                     }
-                    asd++;
                     
+                    Console.WriteLine(boardAscii[0, asd] + boardAscii[1, asd] +
+                                      boardAscii[2, asd] + boardAscii[3, asd] +
+                                      boardAscii[4, asd] + boardAscii[5, asd] +
+                                      boardAscii[6, asd] + boardAscii[7, asd] +
+                                      boardAscii[8, asd] + boardAscii[9, asd] +
+                                      boardAscii[10, asd] + boardAscii[11, asd]+
+                                      boardAscii[12, asd] + boardAscii[13, asd] + 
+                                      boardAscii[14, asd]);
+
+                    asd++;
+
                     //Checks if the Board[x, y] = wall, and if they are then it will not 
                     // allow the player to move there.
                     // -1 == current pos, 0 == 1 to the bottom or right, -2 == one up or to the left
@@ -396,11 +404,12 @@ namespace Game
                     canMoveDown = board[(int)_playerPos.x - 1, (int)_playerPos.y + 1] != 1;
                     canMoveLeft = board[(int)_playerPos.x - 1, (int)_playerPos.y] != 1;
                     canMoveRight = board[(int)_playerPos.x + 1, (int)_playerPos.y - 1] != 1;
-                
-                    //Writes the player pos below the board so the player can see what their
-                    // position is at all times.
-                    Console.WriteLine("x: " + _playerPos.x + ", y: " + _playerPos.y);
                 }
+
+                //Writes the player pos below the board so the player can see what their
+                // position is at all times.
+                Console.WriteLine("x: " + _playerPos.x + ", y: " + _playerPos.y);
+
             }
         }
     }
